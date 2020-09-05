@@ -1,7 +1,7 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Sistema de control de granja avícola} 
+\titulo{Sistema de control de granja } 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos}
@@ -14,15 +14,15 @@
 \autor{Katherine E. Aguirre M.} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{William Mercado}
+\pertenenciaDirector{Universidad Nacional Experimental de Guayana} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{} % si queda vacio no se deberíá incluir 
-\pertenenciaCoDirector{}
+%\codirector{} % si queda vacio no se deberíá incluir 
+%\pertenenciaCoDirector{}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{}
-\empresaCliente{}
+%\cliente{}
+%\empresaCliente{}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -63,11 +63,11 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 26/08/2020 \\ \hline
-1.1      &                                                                 & dd/mm/aaaa \\ \hline
-1.2      & Otro ejemplo \newline
-		   Con texto partido \newline
-		   En varias líneas \newline
-		   A propósito                                                     & dd/mm/aaaa \\ \hline
+1.1      & Actualización de los primeros 6 temas                           & 04/09/2020 \\ \hline
+%\1.2      & Otro ejemplo \newline
+%\		   Con texto partido \newline
+%\		   En varias líneas \newline
+%\		   A propósito                                                     & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -103,14 +103,13 @@ Se adjunta a esta acta la planificación inicial.
 \end{tabular}
 \end{table}
 
-
-
-
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
 \begin{consigna}{black} 
-Debido a la necesidad de diseñar un sistema de bajo coste que esté acorde a los requerimientos actuales de tecnología, comunicaciones y seguridad en la cría de aves para consumo humano, se genera un proyecto que se destaca por la integración de diversas tecnologías que permitirán poner en funcionamiento un sistema automatizado de control de condiciones medioambientales en las naves de las granjas avícolas, garantizando así el poder adecuarlas a los valores  ideales que mantienen el confort y seguridad de los animales; de esta manera, se optimiza la granja para que las aves aseguren tanto la puesta de huevos como el crecimiento de las que están destinadas al consumo humano. El sistema busca  la captura y procesamiento de estas señales procurando la comunicación segura con el servidor que recibe y administra los datos, así mismo se busca incorporar actuadores para el control automático de la ventilación de las alas relacionados con el control de la temperatura, además de la gestión y monitoreo de las variables, alarmas, visualización de datos, reportes entre otros.
+Aludiendo al prototipo conceptual del Sistema de Control Granja se crea la necesidad de diseñar y desarrollar un sistema acorde a los requerimientos actuales de tecnología, comunicaciones y seguridad que se adecuen al concepto de Internet de las Cosas manejado hoy día, de esta manera se genera un proyecto basado en la premisa de automatizar las tareas de monitoreo continuo de la temperatura, humedad, amoniaco, flujo de agua y activación de sistemas de acondicionamiento ambiental de las naves de las granjas de producción animal bajo condiciones controladas, garantizando así el poder adecuarlas a los valores de bienestar ideal que optimizan la crianza de animales y productos relacionados para el consumo humano. 
+
+El planteamiento parte del \textit{knowhow} obtenido del hecho de haber participado del prototipo conceptual del Sistema de Control Granja la sistema busca mejorar la captura de la telemetría mencionada anteriormente para asegurar la transmisión segura de datos con el servidor que los recibe y administra además de la gestión y monitoreo de variables, alarmas, visualización de datos, reportes entre otras funcionalidades detalladas más adelante.
 
 En la Figura \ref{fig:diagBloques} se puede observar el diagrama de bloques del sistema, en la misma se puede observar la estructura del proyecto y la modularidad del mismo que contará con una serie de sensores/actuadores quienes estarán en comunicación con el servidor enviando o recibiendo telemetría, los sensores medirán temperatura, humedad, calidad del aire y el flujo de agua que llega a los bebederos, por otro lado están los actuadores que servirán para operar el sistema de ventilación con que cuente la nave. 
 \begin{itemize}
