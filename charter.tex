@@ -1,14 +1,17 @@
 \documentclass[11pt]{charter}
+\usepackage[paper=portrait,pagesize]{typearea}
+\usepackage{ltablex}
+\usepackage{hyperref} 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
 \titulo{Sistema de control de granja } 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos}
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
+\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Intelegencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
-\posgrado{Maestría en Internet de las cosas}
+%\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 \autor{Katherine E. Aguirre M.} 
@@ -21,8 +24,8 @@
 %\pertenenciaCoDirector{}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-%\cliente{}
-%\empresaCliente{}
+\cliente{Gastón Algaze}
+\empresaCliente{Kin and Carta}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -32,8 +35,8 @@
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{24 de agosto de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicióname
-\fechaFINALPlanificación{22 de Agosto de 2021} 	%Fecha de final de cursada de GdP
+\fechaINICIO{22 de junio de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlanificacion{22 de Agosto de 2021} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{22 de diciembre de 2021}		%Fecha de defensa pública del trabajo final
 
 
@@ -50,7 +53,7 @@
 }
 \pagebreak
 
-
+\vspace*{1px}
 \section{Registros de cambios}
 \label{sec:registro}
 
@@ -64,6 +67,11 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 26/08/2020 \\ \hline
 1.1      & Actualización de los primeros 6 temas                           & 04/09/2020 \\ \hline
+1.2      & Incorporación de historias de usuarios                          & 14/09/2020 \\ \hline
+1.3      & Correcciones sugeridas y desarrollo hasta el punto 11           & 21/09/2020 \\ \hline
+%1.1      & Actualización de los primeros 6 temas                           & 04/09/2020 \\ \hline
+%1.1      & Actualización de los primeros 6 temas                           & 04/09/2020 \\ \hline
+%1.1      & Actualización de los primeros 6 temas                           & 04/09/2020 \\ \hline
 %\1.2      & Otro ejemplo \newline
 %\		   Con texto partido \newline
 %\		   En varias líneas \newline
@@ -73,17 +81,18 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 
 \pagebreak
 
-%-------------------------------------------------------
+
+
 \section{Acta de constitución del proyecto}
 \label{sec:acta}
 
 \begin{flushright}
-Buenos Aires, \fechaInicióname
+Buenos Aires, \fechaInicioName
 \end{flushright}
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con la Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño de un Sistema de Monitoreo y Control de Variables Medioambientales en una Granja, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo  y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicióname\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con la Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño de un Sistema de Monitoreo y Control de Variables Medioambientales en una Granja, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo  y 299.844,77 ARP, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -101,28 +110,31 @@ Se adjunta a esta acta la planificación inicial.
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
 \end{tabular}
 \end{table}
-%-------------------------------------------------------
+
+
+
+
 \section{Descripción técnica-conceptual del proyecto a realizar}
-\label{sec:descripción}
+\label{sec:descripcion}
 
 \begin{consigna}{black} 
 Referenciando al prototipo conceptual del Sistema de Control Granja se crea la necesidad de diseñar y desarrollar un sistema acorde a los requerimientos actuales de tecnología, comunicaciones y seguridad que se adecuen al criterio de Internet de las Cosas manejado hoy día, de esta manera se origina un proyecto basado en la premisa de automatizar tareas de monitoreo continuo de temperatura, humedad, calidad del aire, flujo de agua y activación de sistemas de acondicionamiento ambiental de las naves de las granjas de producción animal bajo condiciones controladas, garantizando así el poder adecuarlas a los valores de bienestar ideal que optimizan la crianza de animales y productos relacionados para el consumo humano. 
 
-El planteamiento parte del \textit{knowhow} obtenido en el desarrollo del prototipo conceptual del Sistema de Control Granja, entendiendo el ¿por qué? de las fallas encontradas tanto de seguridad como de latencia, comunicaciones, diseño entre otros, aplicando las buenas practicas que rigen para el desarrollo de este tipo de soluciones y generar de esta manera un producto robusto que reduzca al minimo probable dichas falencias y converja al maximo posible entre la eficiencia y la eficacia.
+El planteamiento parte del \textit{knowhow} obtenido en el desarrollo del prototipo conceptual del Sistema de Control Granja, entendiendo el ¿por qué? de las fallas encontradas tanto de seguridad como de latencia, comunicaciones, diseño entre otros, aplicando las buenas practicas que rigen para el desarrollo de este tipo de soluciones y generar de esta manera un producto robusto que reduzca al mínimo probable dichas falencias y converja al máximo posible entre la eficiencia y la eficacia.
 
-Del mismo modo, en la Figura \ref{fig:diagBloques} se puede observar el diagrama de bloques que corformará el nuevo sistema, el cual contara con los siguientes modulos: 
+Del mismo modo, en la Figura \ref{fig:diagBloques} se puede observar el diagrama de bloques que conformará el nuevo sistema, el cual contara con los siguientes módulos: 
 \begin{enumerate}
-\item Sensores y Actuadores: conjunto de dispositivos cuya finalidad es la de capturar la telemetria o ejecutar ciertas acciones, contaran con un portal cautivo.
+\item Sensores y Actuadores: conjunto de dispositivos cuya finalidad es la de capturar la telemetría o ejecutar ciertas acciones. Contarán con un portal cautivo.
 \begin{itemize}
 \item Portal Cautivo: sistema de administración de los sensores.
 \end{itemize}
-\item Broker MQTT: servicio que se encargará de recepcionar los mensajes enviados por los clientes y distribuirlos entre sí en el sistema pub-sub.
+\item Broker MQTT: servicio que se encargará de recepcionar los mensajes enviados por los clientes y distribuirlos entre sí en el sistema pub-sub (publicación - suscripción de tópicos).
 \item Servicio NTP: Permitirá sincronizar los relojes de los sensores con el servidor.
 \item Api - WebService: servicio que permitirá el intercambio de datos entre las aplicaciones.
 \item Motor de Base de Datos: repositorio para almacenamiento y persistencia de los datos.
 \item Aplicaciones: software para interactuar con los distintos bloques que integran el sistema, a saber:
 	\begin{itemize}
-		\item App Web: sistema alojado en el servidor que podra ser accedido via wrobser.
+		\item App Web: sistema alojado en el servidor que podrá ser accedido vía wrobser.
 		\item App Mobile: sistema para dispositivos móviles.
 		\item Sistema de Mensajería y Alertas: Sistema de soporte para el manejo de eventualidades, reportes o alertas.
 	\end{itemize}
@@ -134,7 +146,7 @@ Del mismo modo, en la Figura \ref{fig:diagBloques} se puede observar el diagrama
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloquesSCG.png}
+\includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
@@ -146,8 +158,7 @@ Del mismo modo, en la Figura \ref{fig:diagBloques} se puede observar el diagrama
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-
+\begin{consigna}{black} 
 %Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
 % 
 %Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
@@ -198,11 +209,13 @@ Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hli
 
 \end{consigna}
 
+
+
 %-------------------------------------------------------
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 \begin{consigna}{black} 
-El propósito de este proyecto es el de diseñar y producir un Sistema para Monitoreo y Control de Variables Medioambientales aplicado a Granjas de producción animal, aplicando las buenas practicas que rigen en el desarrollo de soluciones IoT de manera óptima, tomando como referencia un prototipo conceptual basado en granja avícola.
+El propósito de este proyecto es el de diseñar y producir un Sistema para Monitoreo y Control de Variables Medioambientales enfocado a granjas de producción animal, aplicando las buenas practicas que rigen en el desarrollo de soluciones IoT de manera óptima, tomando como referencia un prototipo conceptual basado en granja avícola.
 \end{consigna}
 
 %-------------------------------------------------------
@@ -217,21 +230,22 @@ El propósito de este proyecto es el de diseñar y producir un Sistema para Moni
 %Explicitar todo lo quede comprendido dentro del alcance del proyecto.
 %
 %Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-El alcance del proyecto contempla el desarrollo e implementación de los distintos modulos que componen el sistema en su totalidad y las tareas complemantarias que ayudaran a alcanzar los objetivos planteados, a saber:
+El alcance del proyecto contempla el desarrollo e implementación de los distintos módulos que componen el sistema en su totalidad y las tareas complemantarias que ayudaran a alcanzar los objetivos planteados, a saber:
 
 \begin{enumerate}
-	\item \textbf{Realizar capacitaciones y entrenamientos necesarios para completar los desarrollos en las teconologías seleccionadas}: es mandatorio realizar capacitaciones en diversas teconologías de desarrollo de software para poder completar las tareas, se necesita entrenamiento en: GraphQL y React Native.
+	\item \textbf{Realizar capacitaciones y entrenamientos necesarios para completar los desarrollos en las teconologías seleccionadas}: es mandatorio realizar capacitaciones en diversas teconologías de desarrollo de software para poder completar las tareas, se requiere entrenamiento en: GraphQL y React Native.
 	\item \textbf{Configuración del servidor}: se contempla la instalación y configuración de Raspbian Buster lite para plataforma X86 en una Raspberry Pi, así como la generación de certificados para la configuración de las conexiones seguras.	
-	\item \textbf{Diseño e implementación de la Base de Datos}: se debe definir el esquema y diagramas de la base datos, realizar la codificación y construcción de la misma en el motor de base de datos seleccionado.
-	\item \textbf{Implementación del servicio NTP}: se deben realizar las instalaciones y configuraciones necesarias para poner en funciónamiento el servicio de \textit{Network Time Protocol}.
+	\item \textbf{Diseño e implementación de la Base de Datos}: se debe definir el esquema y diagramas de la base datos, así como también realizar la codificación y construcción de la misma en el motor de base de datos seleccionado.
+	\item \textbf{Implementación del servicio NTP}: se deben realizar las instalaciones y configuraciones necesarias para poner en funcionamiento el servicio de \textit{Network Time Protocol}.
 	\item \textbf{Implementación del Broker MQTT}: se necesita instalar, configurar y securizar el servidor MQTT así como configurar la conexión con la base de datos para persistir la telemetria.
 	\item \textbf{Diseño, desarrollo e instalación del software en los sensores}: se necesita desarrollar el sistema de administración de los sensores así como la implementación de los protocolos de comunicación y seguridad necesarios para el envío y recepción de telemetría.
-	\item \textbf{Diseño, desarrollo e implementación de la API-WebService}: se debe desarrollar e implementar el WebService que permitirá interactuar a los diferentes clientes con el resto de los modulos habilitados para ello.
-	\item \textbf{Diseño, desarrollo e implementación de la App Hibrida}: desarrollar e instalar, según la tecnología, las aplicaciones web y moviles que interactuaran con el WebService.
-	\item \textbf{Pruebas Generales del sistema}: cada uno de los modulos que compone el sistema debera ser testeado para asegurar la calidad y funcionamiento de los mismos.
+	\item \textbf{Diseño, desarrollo e implementación de la API-WebService}: se debe desarrollar e implementar el WebService que permitirá interactuar a los diferentes clientes con el resto de los módulos habilitados para ello.
+	\item \textbf{Diseño, desarrollo e implementación de la App Hibrida}: desarrollar e instalar, según la tecnología, las aplicaciones web y móviles que interactuarán con el WebService.
+	\item \textbf{Pruebas Generales del sistema}: cada uno de los módulos que compone el sistema deberá ser testeado para asegurar la calidad y funcionamiento de los mismos.
 	\item \textbf{Elaboración de los manuales de configuración e instalación de cada modulo}: es mandatorio elaborar los manuales de instalación, configuración y/o uso de cada modulo desarrollado.
 \end{enumerate}
 \end{consigna}
+
 
 %-------------------------------------------------------
 \section{3. Supuestos del proyecto}
@@ -251,6 +265,7 @@ Para el desarrollo del presente proyecto se supone que:
 %Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 \end{consigna}
 
+
 %-------------------------------------------------------
 
 \section{4. Requerimientos}
@@ -260,18 +275,18 @@ Los requerimientos necesarios para el desarrollo del proyecto son los siguientes
 \begin{enumerate}
 \item Grupo de requerimientos asociados con sensores y actuadores:
 	\begin{enumerate}
-		\item Deberá activarse en modo servidor cuando no esté conectado a una SSID externa y de esta manera activar el portal de configuración del mismo en un servidor local, una vez conectado a la WiFI externa se deshabilitará la WiFi interna (ésta sólo estará activa en casos de desconección con la WiFI externa) y fungirá como servidor web donde podrá ser consultada su funcionalidad y telemetría.
-		\item Dentro de los servicios a manejar o configurar en el dispositivo se tienen: MQTT (Suscripción y Publicación de tópicos), NTP, Acceso a la telemetría, Administración de Redes Wifi tanto interna como externa, Administración de usuario y contraseña, Reset valores de fábrica, Reinicio del dispositivo, Test de hardware.
-		\item Se contempla la actualización remota de los dispositivos habilitando la opción Update OTA en los mismos.
+		\item Deberá activarse en modo servidor cuando no esté conectado a una SSID externa y de esta manera activar el portal de configuración del mismo en un servidor local, una vez conectado a la WiFi externa se deshabilitará la WiFi interna (ésta sólo estará activa en casos de desconexión con la WiFi externa) y funcionará como servidor web donde podrá ser consultada su funcionalidad y telemetría.
+		\item Dentro de los servicios a manejar o configurar en el dispositivo se tienen: MQTT (suscripción y publicación de tópicos), NTP, acceso a la telemetría, administración de redes WiFi tanto interna como externa, administración de usuario y contraseña, reset valores de fábrica, reinicio del dispositivo, test de hardware.
+		\item Se contempla la actualización remota de los dispositivos habilitando la opción update OTA en los mismos.
 		\item Se requiere que las comunicaciones se realicen en formato JSON.
 		\item Deberá ser capaz de publicar datos de su funcionamiento para que sean registrados y procesados posteriormente según sea la necesidad, estas comunicaciones deberán estar encriptadas mediante el uso de comunicaciones seguras con SSL/TLS, usuario y contraseña para garantizar la privacidad en el transporte de datos.
 		\item Deberá poder conectarse a un servidor NTP para tener su hora sincronizada y así poder manejar cabeceras de tiempo en los registros enviados en formato JSON.
 	\end{enumerate}
 \item Grupo de requerimientos asociados con el servicio NTP:
 	\begin{enumerate}
-		\item Se debera contar con un servicio de hora que pueda funcionar offline en caso de fallar la conectividad a internet para así poder sincronizar las operaciones.
+		\item Se debera contar con un servicio de hora que pueda funcionar \emph{offline} en caso de fallar la conectividad a internet para así poder sincronizar las operaciones.
 	\end{enumerate}
-\item Grupo de requerimientos asociados con la Base de Datos:
+\item Grupo de requerimientos asociados con la base de datos:
 	\begin{enumerate}
 		\item Se requiere la instalación y configuración del motor de base de datos para su posterior uso, el cual deberá ser Postgres o MongoDB en su defecto.
 		\item Se requiere diseñar y elaborar el esquema de la base de datos según los siguientes puntos:
@@ -289,10 +304,10 @@ Los requerimientos necesarios para el desarrollo del proyecto son los siguientes
 			\end{enumerate}
 		\item Se requiere que los datos puedan ser registrados en formato JSON.
 	\end{enumerate}
-\item Grupo de requerimientos asociados con el Broker MQTT:
+\item Grupo de requerimientos asociados con el broker MQTT:
 	\begin{enumerate}
-		\item Se requiere la instalación y configuración de mosquitto como gestor de Pub-Sub.
-		\item Publicación: telemetría, estatus del dispositivo, poder de la señal wifi, versión del firmware.
+		\item Se requiere la instalación y configuración de Mosquitto como gestor de Pub-Sub.
+		\item Publicación: telemetría, estatus del dispositivo, potencia de la señal wifi, versión del firmware.
 		\item Suscripción: activación o desactivación de actuadores de forma manual según el tiempo definido, requerir datos específicos por ítem de los mencionados en el punto previo.
 		\item Registro de datos en la Base de Datos.
 		\item Se requiere que las comunicaciones se realicen en formato JSON.
@@ -314,19 +329,19 @@ Los requerimientos necesarios para el desarrollo del proyecto son los siguientes
 		\item Estados.
 		\item Sensores.
 		\item Lecturas de Datos
-		\item Alarmas Generadas
-		\item Escala de Severidades de alarmas
-		\item Categorías de Clasificación de registros
+		\item Alarmas generadas
+		\item Escala de severidades de alarmas
+		\item Categorías de clasificación de registros
 		\item Consulta de telemetría por sensor.
 		\item Activación de actuadores.
-		\item MQTT: Suscripción y Publicación de tópicos
+		\item MQTT: suscripción y publicación de tópicos
 		\item NTP
 		\end{itemize}
 	\end{enumerate}	
 \item Grupo de requerimientos asociados con la App:
 	\begin{enumerate}
 		\item El cliente será una App basada en JS, se plantea la posibilidad de hacerla multiplataforma con soporte para dispositivos mobile (Android, IOS) y para navegadores (Chrome, Firefox, Safari) tanto de escritorios (Windows, MacOS, Linux) como tablets (Android, Ipad). 
-		\item Se requiere SSL/Tls en todas las comunicaciones.
+		\item Se requiere SSL/TLS en todas las comunicaciones.
 		\item Se recomienda el uso de React Native.
 		\item Se requiere que las comunicaciones se realicen en formato JSON.
 	\end{enumerate}		
@@ -348,12 +363,88 @@ Los requerimientos necesarios para el desarrollo del proyecto son los siguientes
 %\end{itemize}
 \end{consigna}
 
+
+%-----------------------------------------------------------
+%BEGIN Landscape
+%-----------------------------------------------------------
+
+\newpage
+\KOMAoptions{pagesize,paper=landscape,DIV=10}
+\storeareas\landscapevalues
+\addtolength{\oddsidemargin}{-.875in}
+\vspace*{2px}
+
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
+%\begin{consigna}{black} 
+Las historias de usuarios se encuentran diseñadas para emplear SCRUM como metodología de trabajo: 
 
-\begin{consigna}{black}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-\end{consigna}
+\begin{tabularx}{\linewidth}{@{}p{1.3cm} p{14cm} p{1.7cm} p{1.5cm} p{2.5cm}@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\textbf{Clave} & \textbf{Resumen} & \textbf{Prioridad} & \textbf{Points} &  \textbf{Etiquetas} \\ \hline
+PG-1   & Realizar entrenamiento en GraphQL                                                                      & Highest   & 13                         & GraphQL;Training      \\
+PG-2   & Realizar entrenamiento en React Native                                                                 & Highest   & 20                         & React-Native;Training \\
+PG-11  & Bases de datos: Instalación,  configuración y testeo.                                                  & High      & 5                          & Database              \\
+PG-32  & Configurar el Servidor                                                                                 & High      & 13                         & Ambiente              \\
+PG-99  & Backend: Creación de la documentación - Instalación y Configuración.                                   & Medium    & 13                         & GraphQL               \\
+PG-170 & Frontend: Creación de la documentación - Instalación y Configuración.                                  & Medium    & 13                         & GraphQL               \\
+PG-197 & Portal Cautivo: Documentación y creación del Manual de configuración                                   & Medium    & 3                          & Arduino               \\
+PG-44  & Backend: Desarrollar endpoints para gestión de sesiones seguras                                        & Medium    & 13                         & GraphQL               \\
+PG-47  & Frontend: Desarrollar inicio de sesiones seguras en la App mobile y Web                                & Medium    & 21                         & React-Native          \\
+PG-51  & Backend: Desarrollar endpoints GraphQL para gestión del espacio del usuario                            & Medium    & 8                          & GraphQL               \\
+PG-52  & Frontend: Crear la gestión del espacio de usuario en las aplicaciones.                                 & Medium    & 8                          & React-Native          \\
+PG-74  & Backend: Creación del endpoint para la suscripción y publicación de tópicos.                           & Medium    & 3                          & GraphQL               \\
+PG-80  & Backend: Creación del endpoint para la Gestión de Alarmas y Notificaciones                             & Medium    & 3                          & GraphQL               \\
+PG-95  & Backend: Creación del endpoint para la Lectura de Datos generados.                                     & Medium    & 13                         & GraphQL               \\
+PG-138 & Frontend: Creación de la funcionalidad para la Gestión de Alarmas y Notificaciones.                    & Medium    & 5                          & React-Native          \\
+PG-142 & Frontend: Creación de la funcionalidad para la suscripción y publicación de tópicos.                   & Medium    & 5                          & React-Native          \\
+PG-166 & Frontend: Creación de la funcionalidad para la Lectura de Datos generados.                             & Medium    & 21                         & React-Native          \\
+PG-58  & Backend: Creación del endpoint para la Gestión de Permisos                                             & Medium    & 3                          & GraphQL               \\
+PG-62  & Backend: Creación del endpoint para la Gestión de Estados                                              & Medium    & 3                          & GraphQL               \\
+PG-65  & Backend: Creación del endpoint para la Gestión de Zonas a Monitorear                                   & Medium    & 3                          & GraphQL               \\
+PG-68  & Backend: Creación del endpoint para la Gestión de Severidades                                          & Medium    & 3                          & GraphQL               \\
+PG-71  & Backend: Creación del endpoint para la Gestión de Tags de Categorías o Tipos de Clasificación.         & Medium    & 3                          & GraphQL               \\
+PG-77  & Backend: Creación del endpoint para la Gestión de Sensores.                                            & Medium    & 3                          & GraphQL               \\
+PG-83  & Backend: Creación del endpoint para la configuración de variables del sistema.                         & Medium    & 3                          & GraphQL               \\
+PG-86  & Backend: Creación del endpoint para las altas y bajas de usuarios.                                     & Medium    & 3                          & GraphQL               \\
+PG-89  & Backend: Creación del endpoint para la creación y asignación de roles a usuarios.                      & Medium    & 3                          & GraphQL               \\
+PG-104 & Frontend: Creación de la funcionalidad para Gestión de Permisos                                        & Medium    & 5                          & React-Native          \\
+PG-112 & Frontend: Creación de la funcionalidad para Gestión de Estados                                         & Medium    & 5                          & React-Native          \\
+PG-117 & Frontend: Creación de la funcionalidad para Gestión de Zonas a Monitorear                              & Medium    & 5                          & React-Native          \\
+PG-122 & Frontend: Creación de la funcionalidad para la Gestión de Severidades                                  & Medium    & 5                          & React-Native          \\
+PG-127 & Frontend: Creación de la funcionalidad para la Gestión de Tags de Categorías o Tipos de Clasificación. & Medium    & 5                          & React-Native          \\
+PG-133 & Frontend: Creación de la funcionalidad para la Gestión de Sensores.                                    & Medium    & 5                          & React-Native          \\
+PG-147 & Frontend: Creación de la funcionalidad para la configuración de variables del sistema.                 & Medium    & 5                          & React-Native          \\
+PG-152 & Frontend: Creación de la funcionalidad para las altas y bajas de usuarios.                             & Medium    & 5                          & React-Native          \\
+PG-157 & Frontend: Creación de la funcionalidad para la creación y asignación de roles a usuarios.              & Medium    & 5                          & React-Native          \\
+PG-41  & Sensor: Establecer la comunicación de los sensores con el Broker                                       & Medium    & 8                          & Arduino               \\
+PG-50  & Sensor: Consumir servicio NTP e implementar OTA en los sensores                                        & Medium    & 5                          & Arduino               \\
+PG-172 & Portal Cautivo: Creación de la página de Inicio de Sesión                                              & Medium    & 3                          & Arduino               \\
+PG-176 & Portal Cautivo: Creación de la página de configuración de NTP                                          & Medium    & 3                          & Arduino               \\
+PG-179 & Portal Cautivo: Creación de la página de configuración de MQTT                                         & Medium    & 3                          & Arduino               \\
+PG-182 & Portal Cautivo: Creación de la página de gestión de usuario                                            & Medium    & 3                          & Arduino               \\
+PG-185 & Portal Cautivo: Creación de la página de configuración de SSID Externa                                 & Medium    & 3                          & Arduino               \\
+PG-188 & Portal Cautivo: Creación de la página de configuración de SSID Interna                                 & Medium    & 3                          & Arduino               \\
+PG-191 & Portal Cautivo: Creación de la página de configuración de Reset y Restart                              & Medium    & 3                          & Arduino               \\
+PG-194 & Portal Cautivo: Creación de la página de Test de Hardware                                              & Medium    & 3                          & Arduino   
+%\bottomrule
+\end{tabularx}
+
+Anexo (solicitar acceso): \href{https://kathemica.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=PG&view=planning&selectedIssue=PG-41&issueLimit=100&atlOrigin=eyJpIjoiNzljYTRhZmNiZDZmNDE2YTlhMTcxM2Q0ZDJkZjQ3OTciLCJwIjoiaiJ9}{Tablero del proyecto detallado en Jira}.
+
+
+\clearpage
+
+
+%-----------------------------------------------------------
+%END Landscape
+%-----------------------------------------------------------
+\newpage
+\KOMAoptions{paper=portrait,pagesize}
+\recalctypearea
+\vspace*{1px}
+
 
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
@@ -365,7 +456,6 @@ Se contemplan los siguientes entregables en el transcurso del proyecto hasta su 
 		\item Diagrama esquemático general del sistema y de la base de datos
 		\item Código fuente de sistema cautivo, API WebService, aplicaciones, backup de la  base de datos.
 		\item Manual de instalación de las aplicaciones mobiles, portales cautivos, base de datos, broker, API WebService y servidor NTP.
-		\item Informe final.
 	\end{itemize}
 \end{consigna}
 
@@ -376,282 +466,385 @@ Se contemplan los siguientes entregables en el transcurso del proyecto hasta su 
 Se recomienda mostrar el WBS mediante una lista indexada:
 
 \begin{enumerate}
-\item Capacitaciones y Entrenamientos
+\item \textbf{Inicio (hito)}
+\item Capacitaciones y entrenamientos
 	\begin{enumerate}
 		\item Entrenamiento en GraphQL. (14 hrs)
 		\item Entrenamiento en React Native. (20 hrs)
 	\end{enumerate}
-\item Configuración del Servidor
+\item Configuración del ambiente de trabajo
 	\begin{enumerate}
-		\item Instalación del OS. (2 hr)
-		\item Ajuste de Configuraciones. (1 hrs)
+		\item Instalación del OS. (2 hrs)
+		\item Ajuste de configuraciones. (1 hrs)
 		\item Generación y seteo de certificados seguros. (1 hrs)
-		\item Instalación de aplicaciones administrativas del server:
-		\begin{itemize}
-			\item WebMin. (0.5 hrs)
-			\item Docker. (0.25 hrs)
-			\begin{itemize}
-				\item Mosquitto. (0.25 hrs) 
-				\item NTP. (0.25 hrs)
-			\end{itemize}
-		\end{itemize}
-		\item Elaboración del manual de instalación. (1 hrs)
+		\item Instalación de aplicaciones en el server (Webmin, Docker, Mosquitto y NTP). (4 hrs)
+		\item Elaboración del manual de instalación del server. (1 hrs)
+		\item Broker MQTT: Configuración y test. (1.5 hrs)
+		\item Broker MQTT: Elaboración del manual de instalación. (2 hrs)
+		\item Servicio NTP: Configuración, documentación y test. (1.5 hrs)
 	\end{enumerate}
-\item Base de Datos
+\item Base de datos.
 	\begin{enumerate}
-		\item Instalación de Postgres - MongoDB. (0.5 hrs)
-		\item Puesta a punto de la Base de Datos. (1 hrs)
-		\item Diseño y desarrollo del esquema de la BD. (12 hrs)
+		\item Instalación de Postgres - MongoDB y puesta a punto. (2 hrs)
+		\item Diseño y desarrollo del esquema de la BD. (16 hrs)
 		\item Elaboración del manual de instalación y configuración. (4 hrs)
 	\end{enumerate}
-\item Servicio NTP 
-	\begin{enumerate}
-		\item Configuración del servicio. (0.25 hrs)
-		\item Pruebas de Funcionamiento. (0.5 hrs)
-		\item Elaboración del manual de instalación y configuración. (0.25 hrs)
-	\end{enumerate}
-\item Broker MQTT
-	\begin{enumerate}
-		\item Configuración del servicio. (1 hrs)
-		\item Pruebas de Funcionamiento. (0.5 hrs)
-		\item Elaboración del manual de instalación y configuración. (2 hrs)
-	\end{enumerate}
-\item Sensores y Actuadores
+\item Sensores y actuadores
 	\begin{enumerate}
 		\item Desarrollo del software de control:
 		\begin{itemize}
-			\item Gestion de memoria no volatil y configuraciones (6 hrs)
-			\item Sección NTP. (6 hrs)
+			\item Gestión de memoria no volátil y configuraciones (6 hrs)
 			\item Sección MQTT. (12 hrs)
+			\item Sección NTP. (6 hrs)
 			\item Implementación de OTA. (12 hrs)
 		\end{itemize}
 		\item Desarrollo del portal cautivo:
 		\begin{itemize}
-			\item Gestión de NTP. (3 hrs)
-			\item Gestión de MQTT. (3 hrs)
-			\item Gestión de Usuario. (3 hrs)
-			\item Gestión de SSID Externa. (3 hrs)
-			\item Gestión de SSID Interna. (3 hrs)
-			\item Reseteo y Reinicio. (3 hrs)
+			\item Landing page. (7.2 hrs)
+			\item Gestión de usuario. (6 hrs)
+			\item Gestión de SSID externa. (6 hrs)
+			\item Gestión de MQTT. (6 hrs)
+			\item Gestión de NTP. (6 hrs)
+			\item Gestión de SSID Interna. (6 hrs)
+			\item Reseteo y reinicio. (6 hrs)
 			\item Informe de test de hardware. (6 hrs)
 		\end{itemize}
-		\item Pruebas de Funcionamiento. (3 hrs)
-		\item Elaboración del manual de instalación y configuración. (6 hrs)
+		\item Pruebas de funcionamiento. (16.8 hrs)
+		\item Elaboración del manual de instalación y configuración. (32 hrs)
 	\end{enumerate}
+\item \textbf{Fin de OS Dispositivos (hito)}
 \item Api Webservice
 	\begin{enumerate}
-		\item Configuración del Entorno de Desarrollo. (2 hrs)
-		\item Desarrollo de Endpoints (CRUD):
-		\begin{itemize}
-			\item Sesiones seguras. (12 hrs)
-			\item Usuarios:
+		\item Configuración del entorno de desarrollo. (2 hrs)
+		\item Usuarios:
 			\begin{itemize}
-				\item Gestión de ``Mi Espacio``:
-				\begin{itemize}
-					\item Datos personales: Nombre, dirección, celulares, correos, twitter, foto. (6 hrs)
-				\end{itemize}
-				\item Administración de:
+				\item Sesiones seguras. (14 hrs)
+				\item Gestión de "Mi Perfil". (6 hrs)
+				\item Gestión de usuarios:
 				\begin{itemize}
 					\item Altas y bajas. (6 hrs) 
-					\item Roles. (3 hrs)
-					\item Zonas. (3 hrs)
-					\item Permisos. (3 hrs)
+					\item Gestión de roles. (9 hrs)
 				\end{itemize}
 			\end{itemize}
-			\item Tipos: alarmas, notificaciones y sensores. (12 hrs) 
-			\item Zonas a monitorear. (6 hrs) 
-			\item Permisos. (6 hrs) 
-			\item Estados. (6 hrs) 
-			\item Sensores. (6 hrs) 
-			\item Gestión de Datos:
+		\item Administración de:
+			\begin{itemize}
+				\item MQTT: Suscripción y publicación de tópicos. (12 hrs) 
+				\item Estados. (6 hrs)
+				\item Permisos. (6 hrs)  
+				\item Gestión de tags de categorías o tipos de clasificación. (6 hrs) 
+				\item Zonas a monitorear. (6 hrs) 
+				\item Sensores. (6 hrs)
+ 				\item Severidades. (6 hrs)
+				\item Alarmas y notificaciones. (6 hrs) 
+				\item Configuraciones varias del entorno: servidor sendmail, telegram, IFTTT. (6 hrs)
+			\end{itemize}
+		\item Gestión de datos:
 			\begin{itemize}
 				\item Lectura de datos: por sensores y zonas. (18 hrs) 
-				\item visualización de reportes: por rango de fechas, horas y zonas. (24 hrs) 
+				\item visualización de reportes: por rango de fechas, horas y zonas. (18 hrs) 
 			\end{itemize}
-			\item Alarmas y notificaciones. (6 hrs) 
-			\item Severidades. (6 hrs) 
-			\item MQTT: Suscripción y publicación de tópicos. (12 hrs) 
-			\item Gestión de Categorías de Clasificación. (6 hrs) 
-			\item Configuraciones varias del entorno: servidor sendmail, telegram, IFTTT. (12 hrs) 
-			\item Elaboración del manual de instalación y configuración. (36 hrs)  
-		\end{itemize}
+		\item Pruebas de funcionamiento. (21 hrs) 
+		\item Elaboración del manual de instalación y configuración. (36 hrs)  	
 	\end{enumerate}
-\item Aplicaciones
+\item \textbf{Fin de API (hito)} 	
+\item Api Webservice
 	\begin{enumerate}
-		\item Configuración del Entorno de Desarrollo. (2 hrs) 
-		\item Desarrollo de Endpoints (CRUD):
-		\begin{itemize}
-			\item Usuarios:
+		\item Configuración del entorno de desarrollo. (2 hrs)
+		\item Usuarios:
 			\begin{itemize}
-				\item Sesiones. (12 hrs) 
-				\item Gestión de ``Mi Espacio``:
-				\begin{itemize}
-					\item Datos personales: Nombre, dirección, celulares, correos, twitter, foto. (24 hrs) 
-				\end{itemize}
-				\item Administración de:
+				\item Sesiones seguras. (24 hrs)
+				\item Gestión de "Mi Perfil". (12 hrs)
+				\item Gestión de usuarios:
 				\begin{itemize}
 					\item Altas y bajas. (6 hrs) 
-					\item Roles. (3 hrs) 
-					\item Zonas. (3 hrs) 
-					\item Permisos. (3 hrs) 
+					\item Gestión de roles. (9 hrs)
 				\end{itemize}
 			\end{itemize}
-			\item Tipos: alarmas, notificaciones y sensores. (6 hrs) 
-			\item Zonas a monitorear. (6 hrs) 
-			\item Permisos. (6 hrs) 
-			\item Estados. (6 hrs) 
-			\item Sensores. (6 hrs) 
-			\item Gestión de Datos:
+		\item Administración de:
+			\begin{itemize}
+				\item MQTT: Suscripción y publicación de tópicos. (12 hrs) 
+				\item Estados. (6 hrs)
+				\item Permisos. (6 hrs)  
+				\item Gestión de tags de categorías o tipos de clasificación. (6 hrs) 
+				\item Zonas a monitorear. (6 hrs) 
+				\item Sensores. (6 hrs)
+ 				\item Severidades. (6 hrs)
+				\item Alarmas y notificaciones. (6 hrs) 
+				\item Configuraciones varias del entorno: servidor sendmail, telegram, IFTTT. (6 hrs)
+			\end{itemize}
+		\item Gestión de datos:
 			\begin{itemize}
 				\item Lectura de datos: por sensores y zonas. (18 hrs) 
-				\item visualización de reportes: por rango de fechas, horas y zonas. (24 hrs) 
+				\item visualización de reportes: por rango de fechas, horas y zonas. (18 hrs) 
 			\end{itemize}
-			\item Alarmas y notificaciones. (6 hrs) 
-			\item Severidades. (6 hrs) 
-			\item MQTT: Suscripción y publicación de topicos. (12 hrs) 
-			\item Gestión de Categorías de Clasificación. (6 hrs) 
-			\item Configuraciones varias del entorno: servidor sendmail, telegram, IFTTT. (12 hrs)
-			\item Pruebas de Funciónamiento
-			\item Elaboración del manual de instalación y configuración
-		\end{itemize}
-	\end{enumerate}	
-\item Informe Final
-	\begin{itemize}
-		\item Redacción del Informe Final. (63 hrs)
-	\end{itemize}
+		\item Pruebas de funcionamiento. (21 hrs) 
+		\item Elaboración del manual de instalación y configuración. (36 hrs)  	
+	\end{enumerate}
+\item  \textbf{Fin del proyecto (hito).}	
 \end{enumerate}
 
 %Cantidad total de horas: (tantas hs)
-%
+
 %Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
 \end{consigna}
 
+
+
+\newpage
+\KOMAoptions{pagesize,paper=landscape,DIV=10}
+\addtolength{\oddsidemargin}{-.875in}
+%\storeareas\landscapevalues
+\vspace*{2px}
+
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
+\begin{consigna}{black}
+Armado a partir del WBS definido en la etapa anterior. 
 
 %La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
 
 %\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
 
-\end{consigna}
-
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=0.9\textwidth]{./Figuras/AoN.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
 
+\end{consigna}
+%Indicar claramente en qué unidades están expresados los tiempos.
+%De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
+%Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
 
+%%-----------------------------------------------------------
+%%END Landscape
+%%-----------------------------------------------------------
+%\newpage
+%\KOMAoptions{pagesize,paper=landscape,DIV=10}
+%\addtolength{\oddsidemargin}{-.875in}
+%%\storeareas\landscapevalues
+%\vspace*{2px}
+
+%-----------------------------------------------------------
+%BEGIN Landscape
+%-----------------------------------------------------------
+
+\newpage
+\KOMAoptions{pagesize,paper=landscape,DIV=10}
+\addtolength{\oddsidemargin}{-.875in}
+%\storeareas\landscapevalues
+\vspace*{2px}
 
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-Utilizar el software Gantter for Google Drive o alguno similar para dibujar el diagrama de Gantt.
+\begin{consigna}{black}
+%Utilizar el software Gantter for Google Drive o alguno similar para dibujar el diagrama de Gantt.
+%
+%Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre las cuales destacamos:
+%
+%\begin{itemize}
+%\item Planner
+%\item GanttProject
+%\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
+%\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
+%\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+%\end{itemize}
+%
+%Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
+%Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
+%
+%Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
+%Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
+%Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
+%
+%En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\begin{ganttchart}{1}{12}
+%  \gantttitle{2020}{12} \\
+%  \gantttitlelist{1,...,12}{1} \\
+%  \ganttgroup{Group 1}{1}{7} \\
+%  \ganttbar{Task 1}{1}{2} \\
+%  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+%  \ganttmilestone{Milestone o hito}{7} \ganttnewline
+%  \ganttbar{Final Task}{8}{12}
+%  \ganttlink{elem2}{elem3}
+%  \ganttlink{elem3}{elem4}
+%\end{ganttchart}
+%\end{center}
+%\caption{Diagrama de gantt de ejemplo}
+%\label{fig:gantt}
+%\end{figure}
+\vspace{5px}
 
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre las cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
+\begin{figure}[htpb]
+	\centering 
+	\includegraphics[width=0.9\textwidth]{./Figuras/gantt01.png}
+	\caption{Diagrama de Gantt 1 de 3}
+	\label{fig:gantt01}
 \end{figure}
+\vspace{5px}
+\newpage
+\vspace*{2px}
+\begin{figure}[htpb]
+	\centering 
+	\includegraphics[width=0.9\textwidth]{./Figuras/gantt02.png}
+	\caption{Diagrama de Gantt 2 de 3}
+	\label{fig:gantt02}
+\end{figure}
+\vspace{5px}
+\newpage
+\vspace*{2px}
+\begin{figure}[htpb]
+	\centering 
+	\includegraphics[width=0.9\textwidth]{./Figuras/gantt03.png}
+	\caption{Diagrama de Gantt 3 de 3}
+	\label{fig:gantt03}
+\end{figure}
+\vspace{5px}
+\newpage
 
 \end{consigna}
+
+
+%-----------------------------------------------------------
+%END Landscape
+%-----------------------------------------------------------
+\newpage
+\KOMAoptions{pagesize,paper=landscape,DIV=10}
+\addtolength{\oddsidemargin}{-.875in}
+%\storeareas\landscapevalues
+\vspace*{2px}
 
 \section{9. Matriz de uso de recursos de materiales}
 \label{sec:recursos}
 
+%\centering
+%\begin{tabularx}{\linewidth}{@{}p{1.3cm} p{14cm} p{1.7cm} p{1.5cm} p{2.5cm}@{}}
+%\hline
+%\rowcolor[HTML]{C0C0C0} 
+%\textbf{Clave} & \textbf{Resumen} & \textbf{Prioridad} & \textbf{Points} &  \textbf{Etiquetas} \\ \hline
 
-\begin{table}
-\label{tab:recursos}
-\centering
-\begin{tabularx}{\linewidth}{@{}|c|X|X|X|X|c|@{}}
+
+%\begin{table}
+%\label{tab:recursos}
+%\centering
+\begin{tabularx}{\linewidth}{@{}|p{2cm}|p{11cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|@{}} %{@{}|c|X|X|X|X|c|@{}}
 \hline
-\cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Material 1 & Material 2 & Material 3 & Material 4 \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline 
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline 
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+\cellcolor[HTML]{C0C0C0} 
+	& \cellcolor[HTML]{C0C0C0} 
+	& \multicolumn{4}{c}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
+\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Developer & PC & Internet & Servidor \\ \hline
+1              & \textbf{Inicio}                                                                               & 0    & 0    & 0    & 0    \\
+\textbf{2}     & \textbf{Capacitaciones y Entrenamientos}                                                      & 0    & 0    & 0    & 0    \\
+2.1            & Entrenamiento en GraphQL                                                                      & 14   & 14   & 14   & 0    \\
+2.2            & Entrenamiento en React Native                                                                 & 20   & 20   & 20   & 0    \\
+\textbf{3}     & \textbf{Configuración del Ambiente de   Trabajo}                                              & 0    & 0    & 0    & 0    \\
+3.1            & Instalación del OS, ajuste y   seteo de certificados seguros                                  & 4    & 4    & 4    & 4    \\
+3.2            & Instalación de aplicaciones en   el server (Webmin, Docker, Mosquitto y NTP) y documentación. & 5    & 5    & 5    & 5    \\
+3.3            & Broker MQTT: Configuración,   pruebas y documentación.                                        & 3,5  & 3,5  & 3,5  & 3,5  \\
+3.4            & Servicio NTP: Configuración,   pruebas y documentación.                                       & 1,5  & 1,5  & 1,5  & 1,5  \\
+\textbf{4}     & \textbf{Base de Datos}                                                                        & 0    & 0    & 0    & 0    \\
+4.1            & Instalación de Postgres -   MongoDB y puesta a punto                                          & 2    & 2    & 2    & 2    \\
+4.2            & Diseño y desarrollo del esquema   de la BD                                                    & 16   & 16   & 16   & 16   \\
+4.3            & Elaboración del manual de   instalación y configuración                                       & 4    & 4    & 4    & 4    \\
+\textbf{5}     & \textbf{Sensores y Actuadores}                                                                & 0    & 0    & 0    & 0    \\
+\textbf{5.1}   & \textbf{Desarrollo del software de   control}                                                 & 0    & 0    & 0    & 0    \\
+5.1.1          & Gestión de memoria no volatil y   configuraciones                                             & 6    & 6    & 6    & 6    \\
+5.1.2          & Sección MQTT                                                                                  & 12   & 12   & 12   & 12   \\
+5.1.3          & Sección NTP                                                                                   & 6    & 6    & 6    & 6    \\
+5.1.4          & Implementación de OTA                                                                         & 12   & 12   & 12   & 12   \\
+\textbf{5.2}   & \textbf{Desarrollo del portal cautivo}                                                        & 0    & 0    & 0    & 0    \\
+5.2.1          & Landing Page                                                                                  & 7,2  & 7,2  & 7,2  & 7,2  \\
+5.2.2          & Gestión de Usuario                                                                            & 6    & 6    & 6    & 6    \\
+5.2.3          & Gestión de SSID Externa                                                                       & 6    & 6    & 6    & 6    \\
+5.2.4          & Gestión de MQTT                                                                               & 6    & 6    & 6    & 6    \\
+5.2.5          & Gestión de NTP                                                                                & 6    & 6    & 6    & 6    \\
+5.2.6          & Gestión de SSID Interna                                                                       & 6    & 6    & 6    & 6    \\
+5.2.7          & Reseteo y Reinicio                                                                            & 6    & 6    & 6    & 6    \\
+5.2.8          & Informe de test de hardware                                                                   & 6    & 6    & 6    & 6    \\
+5.3            & Pruebas de Funcionamiento                                                                     & 16,8 & 16,8 & 16,8 & 16,8 \\
+5.4            & Elaboración del manual de   instalación y configuración                                       & 32   & 32   & 32   & 32   \\
+6              & \textbf{Fin de OS Dispositivos}                                                               & 0    & 0    & 0    & 0    \\
+\textbf{7}     & \textbf{Api Webservice}                                                                       & 0    & 0    & 0    & 0    \\
+7.1            & Configuración del Entorno de   Desarrollo                                                     & 2    & 2    & 2    & 2    \\
+\textbf{7.2}   & \textbf{Usuarios.}                                                                            & 0    & 0    & 0    & 0    \\
+7.2.1          & Sesiones seguras.                                                                             & 14   & 14   & 14   & 14   \\
+7.2.2          & Gestión de Mi Perfil                                                                          & 6    & 6    & 6    & 6    \\
+\textbf{7.2.3} & Gestión de Usuarios                                                                           & 0    & 0    & 0    & 0    \\
+7.2.3.1        & Altas y bajas.                                                                                & 6    & 6    & 6    & 6    \\
+7.2.3.2        & Gestión de Roles                                                                              & 9    & 9    & 9    & 9    \\
+\textbf{7.3}   & \textbf{Administración de}                                                                    & 0    & 0    & 0    & 0    \\
+7.3.1          & MQTT: Suscripción y publicación   de tópicos.                                                 & 12   & 12   & 12   & 12   \\
+7.3.2          & Estados.                                                                                      & 6    & 6    & 6    & 6    \\
+7.3.3          & Permisos.                                                                                     & 6    & 6    & 6    & 6    \\
+7.3.4          & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & 6    & 6    & 6    & 6    \\
+7.3.5          & Zonas a monitorear.                                                                           & 6    & 6    & 6    & 6    \\
+7.3.6          & Sensores.                                                                                     & 6    & 6    & 6    & 6    \\
+7.3.7          & Severidades.                                                                                  & 6    & 6    & 6    & 6    \\
+7.3.8          & Alarmas y notificaciones.                                                                     & 6    & 6    & 6    & 6    \\
+7.3.9          & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & 6    & 6    & 6    & 6    \\
+\textbf{7.4}   & \textbf{Gestión de Datos.}                                                                    & 0    & 0    & 0    & 0    \\
+7.4.1          & Lectura de datos: por sensores y   zonas                                                      & 18   & 18   & 18   & 18   \\
+7.4.2          & visualización de reportes: por   rango de fechas,  y zonas.                                   & 18   & 18   & 18   & 18   \\
+7.5            & Pruebas de Funcionamiento                                                                     & 21   & 21   & 21   & 21   \\
+7.6            & Elaboración del manual de   instalación y configuración                                       & 36   & 36   & 36   & 36   \\
+8              & \textbf{Fin de API}                                                                           & 0    & 0    & 0    & 0    \\
+\textbf{9}     & \textbf{Aplicaciones}                                                                         & 0    & 0    & 0    & 0    \\
+9.1            & Configuración del Entorno de   Desarrollo                                                     & 2    & 2    & 2    & 2    \\
+\textbf{9.2}   & \textbf{Usuarios.}                                                                            & 0    & 0    & 0    & 0    \\
+9.2.1          & Sesiones seguras.                                                                             & 24   & 24   & 24   & 24   \\
+9.2.2          & Gestión de Mi Perfil                                                                          & 12   & 12   & 12   & 12   \\
+\textbf{9.2.3} & \textbf{Gestión de Usuarios}                                                                  & 0    & 0    & 0    & 0    \\
+9.2.3.1        & Altas y bajas.                                                                                & 6    & 0    & 0    & 0    \\
+9.2.3.2        & Gestión de Roles                                                                              & 9    & 9    & 9    & 9    \\
+\textbf{9.3}   & \textbf{Administración de}                                                                    & 0    & 0    & 0    & 0    \\
+9.3.1          & MQTT: Suscripción y publicación   de tópicos.                                                 & 12   & 12   & 12   & 12   \\
+9.3.2          & Estados.                                                                                      & 6    & 6    & 6    & 6    \\
+9.3.3          & Permisos.                                                                                     & 6    & 6    & 6    & 6    \\
+9.3.4          & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & 6    & 6    & 6    & 6    \\
+9.3.5          & Zonas a monitorear.                                                                           & 6    & 6    & 6    & 6    \\
+9.3.6          & Sensores.                                                                                     & 6    & 6    & 6    & 6    \\
+9.3.7          & Severidades.                                                                                  & 6    & 6    & 6    & 6    \\
+9.3.8          & Alarmas y notificaciones.                                                                     & 6    & 6    & 6    & 6    \\
+9.3.9          & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & 6    & 6    & 6    & 6    \\
+\textbf{9.4}   & \textbf{Gestión de Datos.}                                                                    & 0    & 0    & 0    & 0    \\
+9.4.1          & Lectura de datos: por sensores y   zonas                                                      & 18   & 18   & 18   & 18   \\
+9.4.2          & visualización de reportes: por   rango de fechas,  y zonas.                                   & 18   & 18   & 18   & 18   \\
+9.5            & Pruebas de Funcionamiento                                                                     & 21   & 21   & 21   & 21   \\
+9.6            & Elaboración del manual de   instalación y configuración                                       & 36   & 36   & 36   & 36   \\
+10             & \textbf{Fin del Proyecto}                                                                     &      &      &      &  
 
-\end{tabularx}%
-\end{table}
+\end{tabularx}
+\clearpage
+
+
+%-----------------------------------------------------------
+%END Landscape
+%-----------------------------------------------------------
+\newpage
+\KOMAoptions{paper=portrait,pagesize}
+\recalctypearea
+\vspace*{1px}
 
 
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+\begin{consigna}{black}
+%Si el proyecto es complejo entonces separarlo en partes:
+%\begin{itemize}
+%\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
+%\item El desglose detallado del subtotal de cada una de las áreas.
+%\end{itemize}
+%
+%IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
 
 \end{consigna}
 
@@ -662,90 +855,134 @@ IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+Descripción & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+Developer & \multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{379,16/hora} & \multicolumn{1}{c|}{227.496,00} \\ \hline
+Internet &\multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{1,11/hora} & \multicolumn{1}{c|}{666,00} \\ \hline 
+PC &\multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{3,42/hora} & \multicolumn{1}{c|}{2.052,00} \\ \hline
+Servidor &\multicolumn{1}{c|}{566 horas} & \multicolumn{1}{c|}{0,77/hora} & \multicolumn{1}{c|}{435,82} \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{230.649,82} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+Descripción & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+Developer & \multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{113,75/hora} & \multicolumn{1}{c|}{68.248,80,00} \\ \hline
+Internet &\multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{0,33/hora} & \multicolumn{1}{c|}{199,80} \\ \hline 
+PC &\multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{1,03/hora} & \multicolumn{1}{c|}{615,60} \\ \hline
+Servidor &\multicolumn{1}{c|}{566 horas} & \multicolumn{1}{c|}{0,23/hora} & \multicolumn{1}{c|}{130,75} \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{69.194,95} \\ \hline
+
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} & 299.844,77
    \\ \hline
-\end{tabularx}%
+\end{tabularx}
 \end{table}
 
+\newpage
+\KOMAoptions{pagesize,paper=landscape,DIV=10}
+\addtolength{\oddsidemargin}{-.875in}
+%\storeareas\landscapevalues
+\vspace*{2px}
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
-\begin{consigna}{red}
-Establecer la matriz de asignación de responsabilidades y el manejo de la autoridad completando la siguiente tabla:
+\begin{consigna}{black}
+%Establecer la matriz de asignación de responsabilidades y el manejo de la autoridad completando la siguiente tabla:
+\vspace*{1px}
 
-\begin{table}[htpb]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|}
+%\begin{table}[htpb]
+%\centering
+%\begin{tabularx}{\linewidth}{@{}|p{2cm}|p{11cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|@{}} %{@{}|c|X|X|X|X|c|@{}}
+%\hline
+%\resizebox{\textwidth}{!}{%
+\begin{tabularx}{\linewidth}{@{}|p{1.3cm}|p{10cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|@{}}%{|c|c|c|c|c|c|}
 \hline
-\rowcolor[HTML]{C0C0C0} 
-\cellcolor[HTML]{C0C0C0} &
-  \cellcolor[HTML]{C0C0C0} &
-  \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto} \\ \cline{3-6} 
-\rowcolor[HTML]{C0C0C0} 
-\cellcolor[HTML]{C0C0C0} &
-  \cellcolor[HTML]{C0C0C0} &
-  Responsable &
-  Orientador &
-  Equipo &
-  Cliente \\ \cline{3-6} 
-\rowcolor[HTML]{C0C0C0} 
-\multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
-  \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
-  \authorname &
-  \supname \\ \hline
-%  Nombre de alguien &
-%  \clientename \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
-\end{tabular}%
-}
-\end{table}
+\rowcolor[HTML]{C0C0C0} \cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto} \\ \cline{3-6} 
+\rowcolor[HTML]{C0C0C0} \cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} &  Responsable & Orientador & Equipo & Cliente \\ \cline{3-6} 
+\rowcolor[HTML]{C0C0C0} \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
+\multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} & \authorname & \supname &  --- & \clientename \\ \hline
+1 & \textbf{Inicio}                                                                               				       & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} \\
+2                      & \textbf{Capacitaciones y Entrenamientos}                                                      & \textbf{P} & \textbf{I} & \textbf{-} & \textbf{I} \\
+2.1                    & Entrenamiento en GraphQL                                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+2.2                    & Entrenamiento en React Native                                                                 & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+3                      & \textbf{Configuración del Ambiente de   Trabajo}                                              & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{I} \\
+3.1                    & Instalación del OS, ajuste y   seteo de certificados seguros                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+3.2                    & Instalación de aplicaciones en   el server (Webmin, Docker, Mosquitto y NTP) y documentación. & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+3.3                    & Broker MQTT: Configuración,   pruebas y documentación.                                        & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+3.4                    & Servicio NTP: Configuración,   pruebas y documentación.                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+4                      & \textbf{Base de Datos}                                                                        & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
+4.1                    & Instalación de Postgres -   MongoDB y puesta a punto                                          & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+4.2                    & Diseño y desarrollo del esquema   de la BD                                                    & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+4.3                    & Elaboración del manual de   instalación y configuración                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5                      & \textbf{Sensores y Actuadores}                                                                & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+5.1                    & \textbf{Desarrollo del software de   control}                                                 & P          & C          & -          & I          \\
+5.1.1                  & Gestión de memoria no volátil y   configuraciones                                             & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.1.2                  & Sección MQTT                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.1.3                  & Sección NTP                                                                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.1.4                  & Implementación de OTA                                                                         & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2                    & \textbf{Desarrollo del portal cautivo}                                                        & P          & C          & -          & I          \\
+5.2.1                  & Landing Page                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2.2                  & Gestión de Usuario                                                                            & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2.3                  & Gestión de SSID Externa                                                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2.4                  & Gestión de MQTT                                                                               & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2.5                  & Gestión de NTP                                                                                & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2.6                  & Gestión de SSID Interna                                                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2.7                  & Reseteo y Reinicio                                                                            & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.2.8                  & Informe de test de hardware                                                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+5.3                    & Pruebas de Funcionamiento                                                                     & P          & C          & -          & I          \\
+5.4                    & Elaboración del manual de   instalación y configuración                                       & P          & C          & -          & C          \\
+6                      & \textbf{Fin de OS Dispositivos}                                                               & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} \\
+7                      & \textbf{Api Webservice}                                                                       & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+7.1                    & Configuración del Entorno de   Desarrollo                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.2                    & \textbf{Usuarios.}                                                                            & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+7.2.1                  & Sesiones seguras.                                                                             & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.2.2                  & Gestión de Mi Perfil                                                                          & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.2.3                  & \textbf{Gestión de Usuarios}                                                                  & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+7.2.3.1                & Altas y bajas.                                                                                & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.2.3.2                & Gestión de Roles                                                                              & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3                    & \textbf{Administración de}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+7.3.1                  & MQTT: Suscripción y publicación   de tópicos.                                                 & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.2                  & Estados.                                                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.3                  & Permisos.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.4                  & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.5                  & Zonas a monitorear.                                                                           & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.6                  & Sensores.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.7                  & Severidades.                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.8                  & Alarmas y notificaciones.                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.3.9                  & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.4                    & \textbf{Gestión de Datos.}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+7.4.1                  & Lectura de datos: por sensores y   zonas                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.4.2                  & visualización de reportes: por   rango de fechas,  y zonas.                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+7.5                    & Pruebas de Funcionamiento                                                                     & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{-} \\
+7.6                    & Elaboración del manual de   instalación y configuración                                       & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+8                      & \textbf{Fin de API}                                                                           &            & \textbf{-} & \textbf{-} & \textbf{-} \\
+9                      & \textbf{Aplicaciones}                                                                         & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+9.1                    & Configuración del Entorno de   Desarrollo                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.2                    & \textbf{Usuarios.}                                                                            & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+9.2.1                  & Sesiones seguras.                                                                             & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.2.2                  & Gestión de Mi Perfil                                                                          & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.2.3                  & \textbf{Gestión de Usuarios}                                                                  & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+9.2.3.1                & Altas y bajas.                                                                                & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.2.3.2                & Gestión de Roles                                                                              & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3                    & \textbf{Administración de}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+9.3.1                  & MQTT: Suscripción y publicación   de tópicos.                                                 & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.2                  & Estados.                                                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.3                  & Permisos.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.4                  & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.5                  & Zonas a monitorear.                                                                           & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.6                  & Sensores.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.7                  & Severidades.                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.8                  & Alarmas y notificaciones.                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.3.9                  & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.4                    & \textbf{Gestión de Datos.}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{A} \\
+9.4.1                  & Lectura de datos: por sensores y   zonas                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.4.2                  & visualización de reportes: por   rango de fechas,  y zonas.                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
+9.5                    & Pruebas de Funcionamiento                                                                     & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{-} \\
+9.6                    & Elaboración del manual de   instalación y configuración                                       & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{C} \\
+10                     & \textbf{Fin del Proyecto}                                                                     & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-}
+\end{tabularx}
+%\end{tabular}%
+%}
+%\end{table}
 
 {\footnotesize
 Referencias:
@@ -758,12 +995,17 @@ Referencias:
 \end{itemize}
 } %footnotesize
 
-Una de las columnas debe ser para el Director, ya que se supone que participará en el proyecto.
-A su vez se debe cuidar que no queden muchas tareas seguidas sin ``A'' o ``I''.
-
-Importante: es redundante poner ``I/A'' o ``I/C'', porque para aprobarlo o responder consultas primero la persona debe ser informada.
+%Una de las columnas debe ser para el Director, ya que se supone que participará en el proyecto.
+%A su vez se debe cuidar que no queden muchas tareas seguidas sin ``A'' o ``I''.
+%
+%Importante: es redundante poner ``I/A'' o ``I/C'', porque para aprobarlo o responder consultas primero la persona debe ser informada.
 
 \end{consigna}
+
+\newpage
+\KOMAoptions{paper=portrait,pagesize}
+\recalctypearea
+\vspace*{1px}
 
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}
@@ -910,8 +1152,8 @@ Tarea del WBS 			& Indicador de avance & Frecuencia de reporte & Resp. de seguim
 
 \endlastfoot
 
-1.1	& Fecha de inicio  & Única vez al comienzo & \authorname , \supname & email \\ \hline
-2.1	& Avance de las subtareas  & Mensual mientras dure la tarea & \authorname , \supname & email \\ \hline
+1.1	& Fecha de inicio  & Única vez al comienzo & \authorname & \clientename, \supname & email \\ \hline
+2.1	& Avance de las subtareas  & Mensual mientras dure la tarea & \authorname & \clientename, \supname & email \\ \hline
 
 \end{longtable}
 
