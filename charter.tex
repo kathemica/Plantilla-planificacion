@@ -4,6 +4,8 @@
 \usepackage{ltablex} 
 \usepackage{tabularx}
 \usepackage{makecell}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
 %\usepackage{array}
 %\newcolumntype{Y}{>{\centering\arraybackslash}X}
 %\usepackage{array}
@@ -68,6 +70,7 @@
 1.2      & Incorporación de historias de usuarios                          & 14/09/2020 \\ \hline
 1.3      & Correcciones sugeridas y desarrollo hasta el punto 11           & 21/09/2020 \\ \hline
 1.4      & Desarrollo hasta el punto 17                           		   & 28/09/2020 \\ \hline
+1.5      & Actualización de tareas, historias de usuarios, tiempo y presupuesto   & 05/10/2020 \\ \hline
 %1.1      & Actualización de los primeros 6 temas                           & 04/09/2020 \\ \hline
 %1.1      & Actualización de los primeros 6 temas                           & 04/09/2020 \\ \hline
 %\1.2      & Otro ejemplo \newline
@@ -90,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con la Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño de un Sistema de Monitoreo y Control de Variables Medioambientales en una Granja, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo  y 299.844,77 ARP, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con la Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño de un Sistema de Monitoreo y Control de Variables Medioambientales en una Granja, y tendrá un presupuesto preliminar estimado de 812 hs de trabajo  y 396.170,29 ARP, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -226,7 +229,7 @@ El propósito de este proyecto es el de diseñar y producir un Sistema para Moni
 %Explicitar todo lo quede comprendido dentro del alcance del proyecto.
 %
 %Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-El alcance del proyecto contempla el desarrollo e implementación de los distintos módulos que componen el sistema en su totalidad y las tareas complemantarias que ayudaran a alcanzar los objetivos planteados, a saber:
+El alcance del proyecto contempla el desarrollo e implementación de los distintos módulos que componen el sistema en su totalidad y las tareas complementarias que ayudaran a alcanzar los objetivos planteados, a saber:
 
 \begin{enumerate}
 	\item \textbf{Realizar capacitaciones y entrenamientos necesarios para completar los desarrollos en las teconologías seleccionadas}: es mandatorio realizar capacitaciones en diversas teconologías de desarrollo de software para poder completar las tareas, se requiere entrenamiento en: GraphQL y React Native.
@@ -367,465 +370,98 @@ Los requerimientos necesarios para el desarrollo del proyecto son los siguientes
 \label{sec:backlog}
 \vspace*{1px}
 Las historias de usuarios se encuentran diseñadas para emplear SCRUM como metodología de trabajo: 
+%\begin{tabular}{p{1.3cm}|p{5cm}|p{5cm}|p{1.5cm}|p{1.7cm}|p{1.7cm}}
+
 
 \begin{tabularx}{\linewidth}{@{}|p{1.3cm}|p{17cm}|p{1.7cm}|p{1.5cm}|p{1.7cm}|@{}}
-      \hline 
-      \rowcolor[HTML]{C0C0C0} 
-      \textbf{Clave} & \textbf{Resumen} & \textbf{Prioridad} & \textbf{Points} & \textbf{Estimado}\\ \hline
-PG-1     & Realizar entrenamiento en   GraphQL  & Highest            & 13  & 14,0  Hrs         \\
-         &  \begin{description}        
-                   \item Como Product Owner requiero que los miembros del equipo de desarrollo se capaciten en GraphQL entonces podrán desarrollar la API sin inconvenientes.            
-                   \textbf{Detalles Técnicos:} \href{https://www.udemy.com/course/graphql-with-react-course/}{graphql-with-react-course}         
-                    \item Testing:
-            \end{description}  &  &     & \\
-            
-PG-2     & Realizar entrenamiento en React   Native         & High               & 20  & 20,0  Hrs         \\
-         &  \begin{description}
-                   \item Descripción:  Como Product Owner quiero que los miembros del equipo de desarrollo se capaciten en React Native entonces podrán trabajar en el desarrollo de las aplicaciones híbridas sin inconvenientes.                 
-                   \item Testing:
-            \end{description}            &  &     & \\            
-PG-11    & Bases de datos: Instalación,   configuración y testeo.             & High               & 5   & 22,0  Hrs         \\
-         &  \begin{description}          
-                   \item Descripción:  Como Developer, requiero tener la infraestuctura necesaria para que   almacenar los datos de los programas                 
-                   \item \textbf{Criterio de Aceptación:} DADO que tanto el Broker como la API necesitan almacenamiento permanente e   intercambio de datos CUANDO tanto los sensores como las aplicaciones clientes lo requieran ENTONCES se necesita instalar y configurar un motor de base de datos relacional y uno no relacional,  Y a su vez se debe popular el esquema de la base de datos según el documento anexo.
-                   \item \textbf{Scope:} Se debe tener el servidor previamente configurado      
-				   \textbf{Detalles Técnicos:}
-                   \begin{description} 
-                         \item la base de datos a instalar es Postgresql 12 y MongoDB 
-                         \item se debe configurar la BD para que acepte conexiones externas 
-                         \item se requiere habilitar SSL siempre que sea técnicamente posible 
-                         \item emplear el .backup anexo para popular la DB 
-				   \end{description}
-                   \item Testing:
-            \end{description}    &  &     & \\ 
-PG-32    & Configurar el Servidor         & High               & 13  & 14,0  Hrs         \\
-         &  \begin{description}
-				   \item Como administrador, quiero   contar con el servidor configurado para que se puedan deployar los   desarrollos.                 
-                   \item \textbf{Criterio de Aceptación:}
-				   \begin{description} 
-					\item DADO que inicialmente el servidor no cuenta con OS alguno CUANDO el hardware se encuentra nuevo ENTONCES se  instalar el OS                 				
-					\item DADO que se requiere configurar el OS CUANDO ya se encuentre instalado  ENTONCES se procederá a ejecutar su configuración
-					\item DADO que se deberán securizar las comunicaciones con TLS/SSL CUANDO se desarrolle el proyecto ENTONCES se requerirá generar los certificados correspondientes
-					\item DADA cualquier labor de mantenimiento del servidor CUANDO se requiera realizar alguna acción mediante una interfaz amigable   sin recurrir a la consola ENTONCES se procederá a instalar WebMin 
-					\item DADO que se requiere un software para almacenar contenedores CUANDO se requiera consumir algún recurso del servidor  ENTONCES se procederá a instalar Docker Y \href{http://Portainer.io}{Portainer.io} como administrador de   contenedores.                 
-					\item DADO que se requiere un broker MQTT CUANDO se requiera de comunicación bidireccional con los sensores y   actuadores ENTONCES se procederá a instalar Mosquitto Y se procederá a configurarlo según requerimientos                 
-					\item DADO que se requiere un servicio NTP CUANDO se requiera cronometrar las comunicaciones por MQTT ENTONCES se procederá a configurar un contenedor con un servidor NTP Y se procederá a configurarlo                 
-					\item DADO que se requiere un manual con todos los procedimientos de configuración CUANDO ENTONCES se procederá documentar todo el proceso 
-				\end{description}
-				\item \textbf{Fuera de Alcance:}	     
-					\begin{description} 
-                         \item OS a instalar: Raspbian lite 
-                         \item Seguir guía de instalación y configuración adjunta 			   
-                         \item Administrador web para el server: WebMin 			   
-                         \item Administrador de contenedores: Docker + portainer 				
-                         \item Servicio de hora: contenedor NTP					   			   
-                         \item Broker de comunicaciones: Mosquitto MQTT  
-					\end{description}
-                   \item Testing:
-            \end{description} &  &     & \\
-PG-99    & Backend: Creación de la   documentación - Instalación y Configuración.               & Medium             & 13  & 36,0  Hrs         \\
-         &  \begin{description}
-                   \item Como administrador, quiero   contar con documentación técnica detallada relacionada con las capabilities   que ofrece el Backend del sistema así poder consultar la información cuando   
-				 así lo requiera o poderla compartir con el equipo de desarrollo ante cualquier   consulta.                 
-                   \item \textbf{Criterio de Aceptación:}
-                   \item DADO que se requiere contar con la documentación del backend CUANDO       ENTONCES se procede a realizar la documentación detallada de los endpoints   del Backend.                
-                   \item \textbf{Scope:}
-                         \item Se requiere: detallar lo máximo posible cada endpoint a fin de facilitar   la posterior consulta de los mismos 
-                         \item Se sugiere la creación de un swagger                 
-                   \item Testing: No aplica
-            \end{description}            &  &     & \\
-PG-170   & Frontend: Creación de la   documentación - Instalación y Configuración.              & Medium             & 13  & 36,0  Hrs         \\
-         &  \begin{description}
-                   \item Como administrador, quiero   contar con documentación técnica detallada relacionada con las capabilities   que ofrece el Frontend del sistema así poder consultar la información cuando   así lo requiera o poderla compartir con el equipo de desarrollo ante cualquier   duda generada.                 
-                   \item \textbf{Criterio de Aceptación:}
-                   \item DADO que se requiere contar con la documentación del frontend CUANDO       ENTONCES se procede a realizar la documentación detallada de las   funcionalidades del Frontend.                
-                   \item \textbf{Scope:}
-                         \item Se requiere: detallar lo máximo posible cada funcionalidad a fin de   facilitar la posterior consulta de los mismos                 
-                   \item Testing: No aplica
-            \end{description}  &  &     & \\
-PG-197   & Portal Cautivo: Documentación y   creación del Manual de configuración               & Medium             & 3   & 32,0  Hrs         \\
-         &  \begin{description}
-                   \item Como administrador, quiero tener   la documentación del portal cautivo y así poder tenerla de referencia para   futuras consultas                 
-                   \item \textbf{Criterio de Aceptación:}
-                   \item DADO que se requiere poder tener el manual de configuración del portal cautivo CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}   &  &     & \\
-PG-44    & Backend: Desarrollar endpoints   para gestión de sesiones seguras  & Medium             & 13  & 17,4  Hrs         \\
-         &  \begin{description}                 
-                   \item Como usuario, requiero poder   hacer inicio o cierre de sesiones seguras en mis aplicaciones (mobile y Web)   para que pueda empezar a interactuar con el sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder hacer inicios de sesión seguros en las   aplicaciones (mobile y Web) CUANDO las aplicaciones soliciten los recursos necesarios para realizar   tales acciones ENTONTES se procede a desarrollar las Endpoints para inicio y cierre de   sesión                 
-                         \item El equipo de desarrollo debe configurar las herramientas y tener el   entorno de desarrollo habilitado                 
-                   \item Testing:                 
-            \end{description}            &  &     & \\
-PG-47    & Frontend: Desarrollar inicio de   sesiones seguras en la App mobile y Web            & Medium             & 21  & 27,4  Hrs         \\
-         &  \begin{description}                 
-                   \item Como usuario, requiero poder   hacer inicio o cierre de sesiones seguras en mis aplicaciones (mobile y Web)   para que pueda empezar a interactuar con el sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder hacer inicios de sesión seguros en las   aplicaciones (mobile y Web) CUANDO el usuario así lo requiera ENTONCES se procede a desarrollar las funcionalidades: Iniciar sesión,   Cierre de Sesión
-					\item El equipo de desarrollo debe configurar las herramientas y tener el   entorno de desarrollo habilitado                 
-                   \item Testing:                 
-                   \item \textbf{Scope:}
-            \end{description}   &  &     & \\
-PG-51    & Backend: Desarrollar endpoints   GraphQL para gestión del espacio del usuario        & Medium             & 8   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como usuario, quiero poder   gestionar la información contenida en mi espacio para que pueda tener mis   datos actualizados en las aplicaciones.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder hacer modificación de datos en los espacios de   los usuarios para las aplicaciones (mobile y Web) CUANDO las aplicaciones soliciten los recursos necesarios para realizar   tales acciones ENTONCES se procede a desarrollar las Endpoints para gestión de datos del   usuario
-                   \item Testing:                 
-            \end{description}          &  &     & \\   
-PG-52    & Frontend: Crear la gestión del   espacio de usuario en las aplicaciones.             & Medium             & 8   & 13,4  Hrs         \\
-         &  \begin{description}                 
-                   \item Como usuario, quiero poder   gestionar la información contenida en mi espacio para que pueda tener mis   datos actualizados en las aplicaciones.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder hacer modificación de datos en los espacios de   los usuarios para las aplicaciones (mobile y Web) CUANDO las aplicaciones soliciten los recursos necesarios para realizar   tales acciones ENTONCES se procede a desarrollar las pantallas necesarias para gestion de   datos del usuario                          
-                   \item Testing:                 
-            \end{description}                 &  &     & \\
-PG-74    & Backend: Creación del endpoint   para la suscripción y publicación de tópicos.       & Medium             & 3   & 13,4  Hrs         \\
-         &  \begin{description}                 
-                   \item Como usuario, quiero poder   interactuar con los sensores a través de la telemetría para poder realizar   consultas de estados o datos.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder tener comunicación con los sensores mediante el   Broker MQTT CUANDO se requiera revisar el estado de los sensores, consultar algún dato   o ejecutar una acción ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}        &  &     & \\
-PG-80    & Backend: Creación del endpoint   para la Gestión de Alarmas y Notificaciones         & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   las Alarmas o Alertas generadas por el sistema y así poder realizar las   tareas administrativas necesarias.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar las Alarmas y Alertas del   sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}  &  &     & \\
-PG-95    & Backend: Creación del endpoint   para la Lectura de Datos generados.                 & Medium             & 13  & 38,8  Hrs         \\
-         &  \begin{description}                 
-                   \item Como usuario, quiero consultar   los datos por los sensores tanto por dispositivo como por zona y así poder   monitorear el estado de las variables ambientales.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder consultar los datos generados por los   sensores CUANDO se requiera realizar alguna acción sobre los registros de   lecturas ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:}             
-                         \item Se requiere: Consultar registros, 
-                         \item No se permite eliminar o editar registros 
-                         \item Se requiere que las queries puedan consultar uno (01) o mas sensores /   zonas a la vez, así como periodo de tiempo en minutos, horas, días y   semanas                 
-                   \item Testing:
-            \end{description}          &  &     & \\                     
-PG-138   & Frontend: Creación de la   funcionalidad para la Gestión de Alarmas y Notificaciones.& Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   las Alarmas o Alertas generadas por el sistema y así poder realizar las   tareas administrativas necesarias.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar las Alarmas y Alertas del   sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}      &  &     & \\
-PG-142   & Frontend: Creación de la   funcionalidad para la suscripción y publicación de tópicos.                 & Medium             & 5   & 13,4  Hrs         \\
-         &  \begin{description}                 
-                   \item Como usuario, quiero poder   interactuar con los sensores a través de la telemetría para poder realizar   consultas de estados o datos.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder tener comunicación con los sensores mediante el   Broker MQTT CUANDO se requiera revisar el estado de los sensores, consultar algún dato   o ejecutar una acción ENTONTES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}            &  &     & \\
-PG-166   & Frontend: Creación de la   funcionalidad para la Lectura de Datos generados.         & Medium             & 21  & 38,8  Hrs         \\
-         &  \begin{description}                 
-                   \item Como usuario, quiero consultar   los datos por los sensores tanto por dispositivo como por zona y así poder   monitorear el estado de las variables ambientales.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder consultar los datos generados por los   sensores CUANDO se requiera realizar alguna acción sobre los registros de   lecturas ENTONCES se procede a desarrollar funcionalidad necesaria para poder suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar registros, 
-                         \item No se permite eliminar o editar registros 
-                         \item Se requiere que las queries puedan consultar uno (01) o mas sensores /   zonas a la vez, así como periodo de tiempo en minutos, horas, días y   semanas                 
-                   \item Testing:
-            \end{description}   &  &     & \\
-PG-58    & Backend: Creación del endpoint   para la Gestión de Permisos       & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar los permisos de usuarios para poder realizar correctamente las   gestiones de seguridad del sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar los distintos permisos que pueden   tener los usuarios. CUANDO se estén realizando tareas de administración de usuarios. ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL             
-                   \item Fuera de Alcance:                 
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:                 
-            \end{description}        &  &     & \\
-
-PG-62    & Backend: Creación del endpoint   para la Gestión de Estados        & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar los estados de todos los registros de la base de datos.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar los distintos estados que pueden   tener los registros en la base de datos. CUANDO se estén realizando tareas de administración, creando o actualizando   datos o registros. ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                           
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:                 
-            \end{description} &  &     & \\
-PG-65    & Backend: Creación del endpoint   para la Gestión de Zonas a Monitorear               & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar Zonas a monitorear para poder realizar correctamente las gestiones   de administrativas del sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar las distintas zonas que pueden ser   monitoreadas. CUANDO se estén realizando tareas de supervición del sistema ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                              
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:                 
-            \end{description}                 &  &     & \\
-PG-68    & Backend: Creación del endpoint   para la Gestión de Severidades    & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar los distintos niveles de severidad que pueden tener las alertas,   alarmas o mensajes del sistema para poder realizar correctamente las   gestiones de administrativas del sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar las distintas severidades que pueden   tener las alarmas o alertas del sistema CUANDO se estén realizando tareas desatendidas y automatizadas del   sistema ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL             
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}  &  &     & \\
-PG-71    & Backend: Creación del endpoint   para la Gestión de Tags de Categorías o Tipos de Clasificación.       & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar las distintas categorías de clasificación que serán aplicadas en los   roles para poder realizar correctamente las gestiones de administrativas del   sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar las distintas categorías de   clasificación que se pueden aplicar a los roles CUANDO se estén realizando tareas desatendidas y automatizadas del   sistema ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:} 
-                         \item las categorías se definen como tags estandarizados que serán asignadas a   los roles y que los definirán, por ejemplo: la categoría Sensores se   relaciona con el rol de Sensores que, junto con los permisos completa la   información del rol.                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}       &  &     & \\
-PG-77    & Backend: Creación del endpoint   para la Gestión de Sensores.      & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   organizar los sensores del sistema para poder realizar las tareas   administrativas necesarias.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar los sensores del sistema CUANDO se requiera realizar alguna acción sobre los dispositivos desde el   ámbito administrativo ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}     &  &     & \\
-PG-83    & Backend: Creación del endpoint   para la configuración de variables del sistema.     & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   realizar las configuraciones necesarias al sistema a fin de sistema y así   poder personalizar su funcionamiento según el mejor criterio.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar las Configuraciones del sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}             &  &     & \\
-PG-86    & Backend: Creación del endpoint   para las altas y bajas de usuarios.                 & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   realizar altas y bajas de usuarios en el sistema y así poder ejecutar   correctamente mis tareas administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar las altas y bajas de usuarios en el   sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}     &  &     & \\
-PG-89    & Backend: Creación del endpoint   para la creación y asignación de roles a usuarios.  & Medium             & 3   & 10,4  Hrs         \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   administrar los roles de los usuarios en el sistema y así poder ejecutar   correctamente mis tareas administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar los roles de los usuarios en el   sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros 
-                         \item Cada registro es dependiente del tiempo                 
-                   \item Testing:
-            \end{description}      &  &     & \\
-PG-104   & Frontend: Creación de la   funcionalidad para Gestión de Permisos  & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar los permisos de usuarios para poder realizar correctamente las   gestiones de seguridad del sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar los distintos permisos que pueden   tener los usuarios. CUANDO se estén realizando tareas de administración de usuarios. ENTONCES se procede a desarrollar el frontend necesario para poder suplir dicho requerimiento en React Native             
-                   \item Fuera de Alcance:                 
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}                 &  &     & \\
-PG-112   & Frontend: Creación de la   funcionalidad para Gestión de Estados   & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar los estados de todos los registros de la base de datos.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar los distintos estados que pueden   tener los registros en la base de datos. CUANDO se estén realizando tareas de administración, creando o actualizando   datos o registros. ENTONCES se procede a desarrollar las funciones para poder suplir dicho   requerimiento en Reac Native             
-                   \item Fuera de Alcance:                 
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description} &  &     & \\
-PG-117   & Frontend: Creación de la   funcionalidad para Gestión de Zonas a Monitorear          & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar Zonas a monitorear para poder realizar correctamente las gestiones   de administrativas del sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar las distintas zonas que pueden ser   monitoreadas. CUANDO se estén realizando tareas de supervición del sistema ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native             
-                   \item Fuera de Alcance:                 
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}   &  &     & \\
-PG-122   & Frontend: Creación de la   funcionalidad para la Gestión de Severidades              & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar los distintos niveles de severidad que pueden tener las alertas,   alarmas o mensajes del sistema para poder realizar correctamente las   gestiones de administrativas del sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar las distintas severidades que pueden   tener las alarmas o alertas del sistema CUANDO se estén realizando tareas desatendidas y automatizadas del   sistema ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native             
-                   \item Fuera de Alcance:                 
-                   \textbf{Detalles Técnicos:} 
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing: 
-            \end{description}      &  &     & \\
-PG-127   & Frontend: Creación de la   funcionalidad para la Gestión de tags de Categorías o Tipos de Clasificación.                 & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar las distintas categorías de clasificación que serán aplicadas en los   roles para poder realizar correctamente las gestiones de administrativas del   sistema.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar las distintas categorías de   clasificación que se pueden aplicar a los roles CUANDO se estén realizando tareas desatendidas y automatizadas del   sistema ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:} 
-                         \item las categorías se definen como tags estandarizados que serán asignadas a   los roles y que los definirán, por ejemplo: la categoría Sensores se   relaciona con el rol de Sensores que, junto con los permisos completa la   información del rol.                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                    \item Testing:
-            \end{description}           &  &     & \\
-PG-133   & Frontend: Creación de la   funcionalidad para la Gestión de Sensores.                & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   organizar los sensores del sistema para poder realizar las tareas   administrativas necesarias.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar los sensores del sistema CUANDO se requiera realizar alguna acción sobre los dispositivos desde el   ámbito administrativo ENTONTES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}         &  &     & \\
-PG-147   & Frontend: Creación de la   funcionalidad para la configuración de variables del sistema.               & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   realizar las configuraciones necesarias al sistema a fin de sistema y así   poder personalizar su funcionamiento según el mejor criterio.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar las Configuraciones del sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}                 &  &     & \\
-PG-152   & Frontend: Creación de la   funcionalidad para las altas y bajas de usuarios.         & Medium             & 5   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   realizar altas y bajas de usuarios en el sistema y así poder ejecutar   correctamente mis tareas administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar las altas y bajas de usuarios en el   sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}         &  &     & \\
-PG-157   & Frontend: Creación de la   funcionalidad para la creación y asignación de roles a usuarios.            & Medium             & 5   & 10,4  Hrs         \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   administrar los roles de los usuarios en el sistema y así poder ejecutar   correctamente mis tareas administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder gestionar los roles de los usuarios en el   sistema CUANDO se requiera realizar alguna acción sobre los registros desde el   ámbito administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en React Native                
-                   \item \textbf{Scope:}                  
-                         \item Se requiere: Consultar, editar o inhabilitar registros, 
-                         \item No se permite eliminar registros                 
-                   \item Testing:
-            \end{description}          &  &     & \\
-PG-41    & Sensor: Establecer la   comunicación de los sensores con el Broker & Medium             & 8   & 20,8  Hrs         \\
-         &  \begin{description}                 
-                   \item Como Desarrollador, quiero que   el sensor pueda empezar a comunicarse con el servidor para que pueda recibir   y enviar telemetría                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que los sensores necesitan realizar diversas configuraciones antes de   empezar a comunicarse con el Broker CUANDO realizan sus operaciones para el envió y recepción de   telemetría ENTONTES es necesario que se pueda gestionar las configuraciones necesarias   para establecer las comunicaciones  Y puedan enviar o recibir telemetría cuando sea necesario de manera   segura.                 
-                   \item DADO que los sensores deben suscribirse o publicar tópicos del Broker   MQTT CUANDO realizan sus operaciones para el envió y recepción de   telemetría ENTONTES es necesario codificar todas las acciones necesarias a fin de   garantizar estas operaciones Y puedan enviar o recibir telemetría cuando sea necesario de manera   segura.             
-                   \item Fuera de Alcance:                 
-                   \textbf{Detalles Técnicos:} 
-                         \item TODAS las comunicaciones con el servidor MQTT deben ser seguras 
-                         \item TODAS las configuraciones se deben almacenar en memoria no volátil                 
-                   \item Testing: 
-            \end{description}            &  &     & \\
-PG-50    & Sensor: Consumir servicio NTP e   implementar OTA en los sensores  & Medium             & 5   & 20,8  Hrs         \\
-         &  \begin{description}                 
-                   \item Como Desarrollador, quiero que   el sensor pueda consumir el servicio NTP del servidor para que pueda ajustar   el payload e incluir cabeceras de tiempo en la telemetría.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere que la telemetría enviada por los sensores contengan   cabeceras de tiempo y estén sincronizadas con el servidor CUANDO realizan sus operaciones para el envió y recepción de   telemetría ENTONCES es necesario que puedan comunicarse efectivamente con el servidio   NTP para ajustar sus relojes internos.                 
-                   \item DADO que en la etapa de desarrollo y eventualmente en producción se   requiere hacer algún ajuste de software en los sensores CUANDO se realicen cambios, fixes o updates del software de control de los   sensores ENTONCES se debera habilitar la funcionalidad de OTA para la actualizacion   remota de los dispositivos.             
-                   \item Fuera de Alcance:                 
-                   \textbf{Detalles Técnicos:}                 
-                   \item Testing:  
-            \end{description}        &  &     & \\
-PG-172   & Portal Cautivo: Creación de la   página de Inicio de Sesión        & Medium             & 3   & 8,6  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   loguearme en el portal cautivo del sensor y así poder ejecutar tareas   administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder hacer login en el portal cautivo de los sensores CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}            &  &     & \\
-PG-176   & Portal Cautivo: Creación de la   página de configuración de NTP    & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   configurar el servidor de hora en el sensor y así poder ejecutar tareas   administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder setear el servicio de NTP en el portal cautivo   de los sensores CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}           &  &     & \\
-PG-179   & Portal Cautivo: Creación de la   página de configuración de MQTT   & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   configurar el Broker en el sensor y así poder ejecutar tareas   administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder enviar y recibir telemetría en el sensor CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}          &  &     & \\
-PG-182   & Portal Cautivo: Creación de la   página de gestión de usuario      & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   gestionar el usuario administrador del portal cautivo del sensor y así poder   ejecutar tareas administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder administrar usuario y su password en el portal   cautivo de los sensores CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}  &  &     & \\
-PG-185   & Portal Cautivo: Creación de la   página de configuración de SSID Externa             & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   poder configurar la SSID externa del sensor y así se pueda conectar a los   servicios ofrecidos por la red anfitriona                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder configurar la SSID a la cual se va a conectar el   sensor CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}          &  &     & \\
-PG-188   & Portal Cautivo: Creación de la   página de configuración de SSID Interna             & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   poder configurar la SSID interna del sensor y así se pueda conectar a los   servicios ofrecidos por la red anfitriona                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder configurar la SSID a la cual se van a conectar   para acceder al sensor CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}              &  &     & \\
-PG-191   & Portal Cautivo: Creación de la   página de configuración de Reset y Restart          & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   borrar o reiniciar el sensor y así poder ejecutar tareas   administrativas.                 
-                   \item \textbf{Criterio de Aceptación:}
-				   \item DADO que se requiere poder borrar (reset) o reiniciar (restart) el   sensor CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}       &  &     & \\
-PG-194   & Portal Cautivo: Creación de la   página de Test de Hardware        & Medium             & 3   & 7,4  Hrs          \\
-         &  \begin{description}                 
-                   \item Como administrador, quiero poder   verificar las condiciones de hardware y comunicaciones del sensor y así poder   revisar su funcionamiento.                 
-                   \item \textbf{Criterio de Aceptación:}                 
-                   \item DADO que se requiere poder hacer un test de hardware CUANDO se requiera realizar alguna acción en el sensor desde el ámbito   administrativo ENTONCES se procede a desarrollar la funcionalidad necesaria para poder   suplir dicho requerimiento en Arduino / C++                
-                   \item Testing:
-            \end{description}&  &     &
-            
-
+\hline 
+\rowcolor[HTML]{C0C0C0} 
+\textbf{Clave} & \textbf{Resumen}& \textbf{Prioridad}& \textbf{Estimación} & \textbf{Story Points} \\ \hline
+PG-99 & Backend: Creación de la documentación - Instalación y Configuración. & Medium & 36 & 13 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero contar con documentación técnica detallada relacionada con las capabilities que ofrece el Backend del sistema así poder consultar la información cuando así lo requiera o poderla compartir con el equipo de desarrollo ante cualquier consulta.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere contar con la documentación del backend\\ CUANDO \\ ENTONCES se procede a realizar la documentación detallada de los endpoints del Backend.\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: detallar lo máximo posible cada endpoint a fin de facilitar la posterior consulta de los mismos\\ .- Se sugiere la creación de un swagger\\ \\ Testing:\\ .- No aplica\\ \\ \\ \end{tabular}} \\ \hline
+PG-170 & Frontend: Creación de la documentación - Instalación y Configuración. & Medium & 36 & 13 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero contar con documentación técnica detallada relacionada con las capabilities que ofrece el Frontend del sistema así poder consultar la información cuando así lo requiera o poderla compartir con el equipo de desarrollo ante cualquier duda generada.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere contar con la documentación del frontend\\ CUANDO \\ ENTONCES se procede a realizar la documentación detallada de las funcionalidades del Front End.\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: detallar lo máximo posible cada funcionalidad a fin de facilitar la posterior consulta de los mismos\\ \\ Testing:\\ .- No aplica\end{tabular}} \\ \hline
+PG-197 & Portal Cautivo: Documentación y creación del Manual de configuración & Medium & 32 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero tener la documentación del portal cautivo y así poder tenerla de referencia para futuras consultas\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder tener el manual de configuración del portal cautivo\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-44 & Backend: Desarrollar endpoints para gestión de sesiones seguras & Medium & 17.4 & 13 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}} Como  *Usuario*,  requiero  poder hacer inicio o cierre de sesiones seguras en mis aplicaciones (mobile y Web)  para  que pueda empezar a interactuar con el sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder hacer inicios de sesión seguros en las aplicaciones (mobile y Web)\\ CUANDO las aplicaciones soliciten los recursos necesarios para realizar tales acciones\\ ENTONCES se procede a desarrollar las Endpoints para inicio y cierre de sesión\\ \\ Assumptions/Dependences:\\ \\ .- El equipo de desarrollo debe configurar las herramientas y tener el entorno de desarrollo habilitado\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-47 & Frontend: Desarrollar inicio de sesiones seguras en la App mobile y Web & Medium & 27.4 & 21 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}} Como  *Usuario*,  requiero  poder hacer inicio o cierre de sesiones seguras en mis aplicaciones (mobile y Web)  para  que pueda empezar a interactuar con el sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder hacer inicios de sesión seguros en las aplicaciones (mobile y Web)\\ CUANDO el usuario así lo requiera\\ ENTONCES se procede a desarrollar las funcionalidades: Iniciar sesión, Cierre de Sesión \\ \\ Assumptions/Dependences:\\ \\ .- El equipo de desarrollo debe configurar las herramientas y tener el entorno de desarrollo habilitado\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-51 & Backend: Desarrollar endpoints GraphQL para gestión del espacio del usuario & Medium & 7.4 & 8 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}} Como  *Usuario*,  quiero  poder gestionar la información contenida en mi espacio  para  que pueda tener mis datos actualizados en las aplicaciones.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder hacer modificación de datos en los espacios de los usuarios para las aplicaciones (mobile y Web)\\ CUANDO las aplicaciones soliciten los recursos necesarios para realizar tales acciones\\ ENTONCES se procede a desarrollar las Endpoints para gestión de datos del usuario\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-52 & Frontend: Crear la gestión del espacio de usuario en las aplicaciones. & Medium & 13.4 & 8 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como usuario, quiero poder gestionar la información contenida en mi espacio para que pueda tener mis datos actualizados en las aplicaciones.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder hacer modificación de datos en los espacios de los usuarios para las aplicaciones (mobile y Web)\\ CUANDO las aplicaciones soliciten los recursos necesarios para realizar tales acciones\\ ENTONCES se procede a desarrollar las pantallas necesarias para gestión de datos del usuario\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-74 & Backend: Creación del endpoint para la suscripción y publicación de tópicos. & Medium & 13.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como usuario, quiero poder interactuar con los sensores a través de la telemetría para poder realizar consultas de estados o datos.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder tener comunicación con los sensores mediante el Broker MQTT\\ CUANDO se requiera revisar el estado de los sensores, consultar algún dato o ejecutar una acción\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\end{tabular}} \\ \hline
+PG-80 & Backend: Creación del endpoint para la Gestión de Alarmas y Notificaciones & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder las Alarmas o Alertas generadas por el sistema y así poder realizar las tareas administrativas necesarias.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar las Alarmas y Alertas del sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\end{tabular}} \\ \hline
+PG-95 & Backend: Creación del endpoint para la Lectura de Datos generados. & Medium & 38.8 & 13 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como usuario, quiero consultar los datos por los sensores tanto por dispositivo como por zona  y así poder monitorear el estado de las variables ambientales.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder consultar los datos generados por los sensores\\ CUANDO se requiera realizar alguna acción sobre los registros de lecturas\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar registros,\\ .- No se permite eliminar o editar registros\\ .- Se requiere que las queries puedan consultar uno (01) o mas sensores / zonas a la vez, así como periodo de tiempo en minutos, horas, días y semanas\\ \\ Testing:\end{tabular}} \\ \hline
+PG-138 & Frontend: Creación de la funcionalidad para la Gestión de Alarmas y Notificaciones. & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder las Alarmas o Alertas generadas por el sistema y así poder realizar las tareas administrativas necesarias.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar las Alarmas y Alertas del sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\end{tabular}} \\ \hline
+PG-142 & Frontend: Creación de la funcionalidad para la suscripción y publicación de tópicos. & Medium & 13.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como usuario, quiero poder interactuar con los sensores a través de la telemetría para poder realizar consultas de estados o datos.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder tener comunicación con los sensores mediante el Broker MQTT\\ CUANDO se requiera revisar el estado de los sensores, consultar algún dato o ejecutar una acción\\ ENTONTES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\end{tabular}} \\ \hline
+PG-166 & Frontend: Creación de la funcionalidad para la Lectura de Datos generados. & Medium & 38.8 & 21 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como usuario, quiero consultar los datos por los sensores tanto por dispositivo como por zona  y así poder monitorear el estado de las variables ambientales.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder consultar los datos generados por los sensores\\ CUANDO se requiera realizar alguna acción sobre los registros de lecturas\\ ENTONCES se procede a desarrollar funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar registros,\\ .- No se permite eliminar o editar registros\\ .- Se requiere que las queries puedan consultar uno (01) o mas sensores / zonas a la vez, así como periodo de tiempo en minutos, horas, días y semanas\\ \\ Testing:\end{tabular}} \\ \hline
+PG-58 & Backend: Creación del endpoint para la Gestión de Permisos & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar los permisos de usuarios para poder realizar correctamente las gestiones de seguridad del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar los distintos permisos que pueden tener los usuarios.\\ CUANDO se estén realizando tareas de administración de usuarios.\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-65 & Backend: Creación del endpoint para la Gestión de Zonas a Monitorear & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar Zonas a monitorear para poder realizar correctamente las gestiones de administrativas del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar las distintas zonas que pueden ser monitoreadas.\\ CUANDO se estén realizando tareas de supervición del sistema\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-68 & Backend: Creación del endpoint para la Gestión de Severidades & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar los distintos niveles de severidad que pueden tener las alertas, alarmas o mensajes del sistema para poder realizar correctamente las gestiones de administrativas del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar las distintas severidades que pueden tener las alarmas o alertas del sistema\\ CUANDO se estén realizando tareas desatendidas y automatizadas del sistema\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-71 & Backend: Creación del endpoint para la Gestión de Tags de Categorías o Tipos de Clasificación. & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar las distintas categorías de clasificación que serán aplicadas en los roles para poder realizar correctamente las gestiones de administrativas del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar las distintas  categorías de clasificación que se pueden aplicar a los roles\\ CUANDO se estén realizando tareas desatendidas y automatizadas del sistema\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ .- las categorías se definen como tags estandarizados que serán asignadas a los roles y que los definirán, por ejemplo: la categoria Sensores se relaciona con el rol de Sensores que, junto con los permisos completa la información del rol.\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\end{tabular}} \\ \hline
+PG-77 & Backend: Creación del endpoint para la Gestión de Sensores. & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder organizar los sensores del sistema para poder realizar las tareas administrativas necesarias.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar los sensores del sistema\\ CUANDO se requiera realizar alguna acción sobre los dispositivos desde el ámbito administrativo\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\end{tabular}} \\ \hline
+PG-83 & Backend: Creación del endpoint para la configuración de variables del sistema. & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder realizar las configuraciones necesarias al sistema a fin de sistema y así poder personalizar su funcionamiento según el mejor criterio.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar las Configuraciones del sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\end{tabular}} \\ \hline
+PG-86 & Backend: Creación del endpoint para las altas y bajas de usuarios. & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder realizar altas y bajas de usuarios en el sistema y así poder ejecutar correctamente mis tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar las altas y bajas de usuarios en el sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\end{tabular}} \\ \hline
+PG-89 & Backend: Creación del endpoint para la creación y asignación de roles a usuarios. & Medium & 10.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder administrar los roles de los usuarios en el sistema y así poder ejecutar correctamente mis tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar los roles de los usuarios en el sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar el endpoint necesario para poder suplir dicho requerimiento en GraphQL\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ .- Cada registro es dependiente del tiempo\\ \\ Testing:\end{tabular}} \\ \hline
+PG-104 & Frontend: Creación de la funcionalidad para Gestión de Permisos & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar los permisos de usuarios para poder realizar correctamente las gestiones de seguridad del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar los distintos permisos que pueden tener los usuarios.\\ CUANDO se estén realizando tareas de administración de usuarios.\\ ENTONCES se procede a desarrollar el frontend necesario para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-112 & Frontend: Creación de la funcionalidad para Gestión de Estados & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar los estados de todos los registros de la base de datos.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar los distintos estados que pueden tener los registros en la base de datos.\\ CUANDO se estén realizando tareas de administración, creando o actualizando datos o registros.\\ ENTONCES se procede a desarrollar las funciones para poder suplir dicho requerimiento en Reac Native\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-117 & Frontend: Creación de la funcionalidad para Gestión de Zonas a Monitorear & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar Zonas a monitorear para poder realizar correctamente las gestiones de administrativas del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar las distintas zonas que pueden ser monitoreadas.\\ CUANDO se estén realizando tareas de supervición del sistema\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-122 & Frontend: Creación de la funcionalidad para la Gestión de Severidades & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar los distintos niveles de severidad que pueden tener las alertas, alarmas o mensajes del sistema para poder realizar correctamente las gestiones de administrativas del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar las distintas severidades que pueden tener las alarmas o alertas del sistema\\ CUANDO se estén realizando tareas desatendidas y automatizadas del sistema\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-127 & Frontend: Creación de la funcionalidad para la Gestión de Tags de Categorías o Tipos de Clasificación. & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar las distintas categorías de clasificación que serán aplicadas en los roles para poder realizar correctamente las gestiones de administrativas del sistema.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar las distintas  categorías de clasificación que se pueden aplicar a los roles\\ CUANDO se estén realizando tareas desatendidas y automatizadas del sistema\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ .- las categorías se definen como tags estandarizados que serán asignadas a los roles y que los definirán, por ejemplo: la categoria Sensores se relaciona con el rol de Sensores que, junto con los permisos completa la información del rol.\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\end{tabular}} \\ \hline
+PG-133 & Frontend: Creación de la funcionalidad para la Gestión de Sensores. & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder organizar los sensores del sistema para poder realizar las tareas administrativas necesarias.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar los sensores del sistema\\ CUANDO se requiera realizar alguna acción sobre los dispositivos desde el ámbito administrativo\\ ENTONTES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\end{tabular}} \\ \hline
+PG-147 & Frontend: Creación de la funcionalidad para la configuración de variables del sistema. & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder realizar las configuraciones necesarias al sistema a fin de sistema y así poder personalizar su funcionamiento según el mejor criterio.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar las Configuraciones del sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\end{tabular}} \\ \hline
+PG-152 & Frontend: Creación de la funcionalidad para las altas y bajas de usuarios. & Medium & 7.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder realizar altas y bajas de usuarios en el sistema y así poder ejecutar correctamente mis tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar las altas y bajas de usuarios en el sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\end{tabular}} \\ \hline
+PG-157 & Frontend: Creación de la funcionalidad para la creación y asignación de roles a usuarios. & Medium & 10.4 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder administrar los roles de los usuarios en el sistema y así poder ejecutar correctamente mis tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder gestionar los roles de los usuarios en el sistema\\ CUANDO se requiera realizar alguna acción sobre los registros desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en React Native\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- Se requiere: Consultar, editar o inhabilitar registros,\\ .- No se permite eliminar registros\\ \\ Testing:\end{tabular}} \\ \hline
+PG-41 & Sensor: Establecer la comunicación de los sensores con el Broker & Medium & 20.8 & 8 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}} Como  *Usuario*,  quiero  que el sensor pueda empezar a comunicarse con el servidor  para  que pueda recibir y enviar telemetría.\\ \\ Acceptante Criteria:\\ \\ DADO que los sensores necesitan realizar diversas configuraciones antes de empezar a comunicarse con el Broker\\ CUANDO realizan sus operaciones para el envió y recepción de telemetría\\ ENTONCES es necesario que se pueda gestionar las configuraciones necesarias para establecer las comunicaciones \\ Y puedan enviar o recibir telemetría cuando sea necesario de manera segura.\\ \\ DADO que los sensores deben suscribirse o publicar tópicos del Broker MQTT\\ CUANDO realizan sus operaciones para el envió y recepción de telemetría\\ ENTONCES es necesario codificar todas las acciones necesarias a fin de garantizar estas operaciones\\ Y puedan enviar o recibir telemetría cuando sea necesario de manera segura.\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ .- TODAS las comunicaciones con el servidor MQTT deben ser seguras\\ .- TODAS las configuraciones se deben almacenar en memoria no volatil\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-50 & Sensor: Consumir servicio NTP e implementar OTA en los sensores & Medium & 20.8 & 5 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}} Como  *Administrador del Sistema*,  quiero  que el sensor pueda consumir el servicio NTP del servidor  para  que pueda ajustar el payload e incluir cabeceras de tiempo en la telemetría.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere que la telemetría enviada por los sensores contengan cabeceras de tiempo y estén sincronizadas con el servidor\\ CUANDO realizan sus operaciones para el envió y recepción de telemetría\\ ENTONCES es necesario que puedan comunicarse efectivamente con el servicio NTP para ajustar sus relojes internos.\\ \\ DADO que en la etapa de desarrollo y eventualmente en producción se requiere hacer algún ajuste de software en los sensores\\ CUANDO se realicen cambios, fixes o updates del sosftware de control de los sensores\\ ENTONCES se debera habilitar la funcionalidad de OTA para la actualizacion remota de los dispositivos.\\ \\ Assumptions/Dependences:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\\ \\ Scope:\end{tabular}} \\ \hline
+PG-172 & Portal Cautivo: Creación de la página de Inicio de Sesión & Medium & 8.6 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder loguearme en el portal cautivo del sensor y así poder ejecutar tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder hacer login en el portal cautivo de los sensores\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-176 & Portal Cautivo: Creación de la página de configuración de NTP & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder configurar el servidor de hora en el sensor y así poder ejecutar tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder seterar el servicio de NTP en el portal cautivo de los sensores\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-179 & Portal Cautivo: Creación de la página de configuración de MQTT & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder configurar el Broker en el sensor y así poder ejecutar tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder enviar y recibir telemetría en el sensor\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-182 & Portal Cautivo: Creación de la página de gestión de usuario & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder gestionar el usuario administrador del portal cautivo del sensor y así poder ejecutar tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder administrar usuario y su password en el portal cautivo de los sensores\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-185 & Portal Cautivo: Creación de la página de configuración de SSID Externa & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder poder configurar la SSID externa del sensor y así se pueda conectar a los servicios ofrecidos por la red anfitriona\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder  configurar la SSID a la cual se va a conectar el sensor\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-188 & Portal Cautivo: Creación de la página de configuración de SSID Interna & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder poder configurar la SSID interna del sensor y así se pueda conectar a los servicios ofrecidos por la red anfitriona\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder  configurar la SSID a la cual se van a conectar para acceder al sensor\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-191 & Portal Cautivo: Creación de la página de configuración de Reset y Restart & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder borrar o reiniciar el sensor y así poder ejecutar tareas administrativas.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder borrar (reset) o reiniciar (restart) el sensor\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}} \\ \hline
+PG-194 & Portal Cautivo: Creación de la página de Test de Hardware & Medium & 7.4 & 3 \\ \hline
+ & \multicolumn{4}{l}{\begin{tabular}[c]{@{}p{23cm}|@{}}Como administrador, quiero poder verificar las condiciones de hardware y comunicaciones del sensor y así poder revisar su funcionamiento.\\ \\ Acceptante Criteria:\\ \\ DADO que se requiere poder hacer un test de hardware\\ CUANDO se requiera realizar alguna acción en el sensor desde el ámbito administrativo\\ ENTONCES se procede a desarrollar la funcionalidad necesaria para poder suplir dicho requerimiento en Arduino / C++\\ \\ Assumptions/Dependences:\\ \\ Scope:\\ \\ Out of Scope:\\ \\ Technical Details:\\ \\ Testing:\end{tabular}}
 \end{tabularx}
+%}
+%\end{table}
 
 Anexo (solicitar acceso): \href{https://kathemica.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=PG&view=planning&selectedIssue=PG-41&issueLimit=100&atlOrigin=eyJpIjoiNzljYTRhZmNiZDZmNDE2YTlhMTcxM2Q0ZDJkZjQ3OTciLCJwIjoiaiJ9}{Tablero del proyecto detallado en Jira}.
-
 
 
 \end{landscape}
@@ -857,8 +493,16 @@ Se recomienda mostrar el WBS mediante una lista indexada:
 \item \textbf{Inicio (hito)}
 \item Capacitaciones y entrenamientos
 	\begin{enumerate}
-		\item Entrenamiento en GraphQL. (14 hrs)
-		\item Entrenamiento en React Native. (20 hrs)
+		\item Node.js: Curso de Capacitación (35 hrs)
+		\item Node.js TDD: Testing Training (5 hrs)
+		\item React TDD: Testing training (12 hrs)
+		\item Entrenamiento en GraphQL (14 hrs)
+		\item Entrenamiento en React Native (20 hrs)
+	\end{enumerate}
+\item UX/UI: Diseño de prototipos de interfaces de usuario
+	\begin{enumerate}
+		\item Prototipo interfaz portal cautivo. (40 hrs)
+		\item Prototipo interfaz App web/mobile. (120 hrs)
 	\end{enumerate}
 \item Configuración del ambiente de trabajo
 	\begin{enumerate}
@@ -971,7 +615,7 @@ Se recomienda mostrar el WBS mediante una lista indexada:
 \item  \textbf{Fin del proyecto (hito).}	
 \end{enumerate}
 
-Cantidad total de horas: (600 hs)
+Cantidad total de horas: (812 hs)
 
 %Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
@@ -992,7 +636,7 @@ Armado a partir del WBS definido en la etapa anterior.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=1.4\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=1.1\textwidth]{./Figuras/AoN.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
@@ -1047,91 +691,103 @@ Armado a partir del WBS definido en la etapa anterior.
 \label{sec:recursos}
 
 
-\begin{tabularx}{\linewidth}{@{}|p{2cm}|p{11cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}|@{}} %{@{}|c|X|X|X|X|c|@{}}
+\begin{tabularx}{\linewidth}{@{}|p{1.5cm}|p{13cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|@{}} %{@{}|c|X|X|X|X|X|c|@{}}
 \hline
-\cellcolor[HTML]{C0C0C0} 
-	& \cellcolor[HTML]{C0C0C0} 
-	& \multicolumn{4}{c}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Developer & PC & Internet & Servidor \\ \hline
-1              & \textbf{Inicio}                                                                               & 0    & 0    & 0    & 0    \\
-\textbf{2}     & \textbf{Capacitaciones y Entrenamientos}                                                      & 0    & 0    & 0    & 0    \\
-2.1            & Entrenamiento en GraphQL                                                                      & 14   & 14   & 14   & 0    \\
-2.2            & Entrenamiento en React Native                                                                 & 20   & 20   & 20   & 0    \\
-\textbf{3}     & \textbf{Configuración del Ambiente de   Trabajo}                                              & 0    & 0    & 0    & 0    \\
-3.1            & Instalación del OS, ajuste y   seteo de certificados seguros                                  & 4    & 4    & 4    & 4    \\
-3.2            & Instalación de aplicaciones en   el server (Webmin, Docker, Mosquitto y NTP) y documentación. & 5    & 5    & 5    & 5    \\
-3.3            & Broker MQTT: Configuración,   pruebas y documentación.                                        & 3,5  & 3,5  & 3,5  & 3,5  \\
-3.4            & Servicio NTP: Configuración,   pruebas y documentación.                                       & 1,5  & 1,5  & 1,5  & 1,5  \\
-\textbf{4}     & \textbf{Base de Datos}                                                                        & 0    & 0    & 0    & 0    \\
-4.1            & Instalación de Postgres -   MongoDB y puesta a punto                                          & 2    & 2    & 2    & 2    \\
-4.2            & Diseño y desarrollo del esquema   de la BD                                                    & 16   & 16   & 16   & 16   \\
-4.3            & Elaboración del manual de   instalación y configuración                                       & 4    & 4    & 4    & 4    \\
-\textbf{5}     & \textbf{Sensores y Actuadores}                                                                & 0    & 0    & 0    & 0    \\
-\textbf{5.1}   & \textbf{Desarrollo del software de   control}                                                 & 0    & 0    & 0    & 0    \\
-5.1.1          & Gestión de memoria no volatil y   configuraciones                                             & 6    & 6    & 6    & 6    \\
-5.1.2          & Sección MQTT                                                                                  & 12   & 12   & 12   & 12   \\
-5.1.3          & Sección NTP                                                                                   & 6    & 6    & 6    & 6    \\
-5.1.4          & Implementación de OTA                                                                         & 12   & 12   & 12   & 12   \\
-\textbf{5.2}   & \textbf{Desarrollo del portal cautivo}                                                        & 0    & 0    & 0    & 0    \\
-5.2.1          & Landing Page                                                                                  & 7,2  & 7,2  & 7,2  & 7,2  \\
-5.2.2          & Gestión de Usuario                                                                            & 6    & 6    & 6    & 6    \\
-5.2.3          & Gestión de SSID Externa                                                                       & 6    & 6    & 6    & 6    \\
-5.2.4          & Gestión de MQTT                                                                               & 6    & 6    & 6    & 6    \\
-5.2.5          & Gestión de NTP                                                                                & 6    & 6    & 6    & 6    \\
-5.2.6          & Gestión de SSID Interna                                                                       & 6    & 6    & 6    & 6    \\
-5.2.7          & Reseteo y Reinicio                                                                            & 6    & 6    & 6    & 6    \\
-5.2.8          & Informe de test de hardware                                                                   & 6    & 6    & 6    & 6    \\
-5.3            & Pruebas de Funcionamiento                                                                     & 16,8 & 16,8 & 16,8 & 16,8 \\
-5.4            & Elaboración del manual de   instalación y configuración                                       & 32   & 32   & 32   & 32   \\
-6              & \textbf{Fin de OS Dispositivos}                                                               & 0    & 0    & 0    & 0    \\
-\textbf{7}     & \textbf{Api Webservice}                                                                       & 0    & 0    & 0    & 0    \\
-7.1            & Configuración del Entorno de   Desarrollo                                                     & 2    & 2    & 2    & 2    \\
-\textbf{7.2}   & \textbf{Usuarios.}                                                                            & 0    & 0    & 0    & 0    \\
-7.2.1          & Sesiones seguras.                                                                             & 14   & 14   & 14   & 14   \\
-7.2.2          & Gestión de Mi Perfil                                                                          & 6    & 6    & 6    & 6    \\
-\textbf{7.2.3} & Gestión de Usuarios                                                                           & 0    & 0    & 0    & 0    \\
-7.2.3.1        & Altas y bajas.                                                                                & 6    & 6    & 6    & 6    \\
-7.2.3.2        & Gestión de Roles                                                                              & 9    & 9    & 9    & 9    \\
-\textbf{7.3}   & \textbf{Administración de}                                                                    & 0    & 0    & 0    & 0    \\
-7.3.1          & MQTT: Suscripción y publicación   de tópicos.                                                 & 12   & 12   & 12   & 12   \\
-7.3.2          & Estados.                                                                                      & 6    & 6    & 6    & 6    \\
-7.3.3          & Permisos.                                                                                     & 6    & 6    & 6    & 6    \\
-7.3.4          & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & 6    & 6    & 6    & 6    \\
-7.3.5          & Zonas a monitorear.                                                                           & 6    & 6    & 6    & 6    \\
-7.3.6          & Sensores.                                                                                     & 6    & 6    & 6    & 6    \\
-7.3.7          & Severidades.                                                                                  & 6    & 6    & 6    & 6    \\
-7.3.8          & Alarmas y notificaciones.                                                                     & 6    & 6    & 6    & 6    \\
-7.3.9          & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & 6    & 6    & 6    & 6    \\
-\textbf{7.4}   & \textbf{Gestión de Datos.}                                                                    & 0    & 0    & 0    & 0    \\
-7.4.1          & Lectura de datos: por sensores y   zonas                                                      & 18   & 18   & 18   & 18   \\
-7.4.2          & visualización de reportes: por   rango de fechas,  y zonas.                                   & 18   & 18   & 18   & 18   \\
-7.5            & Pruebas de Funcionamiento                                                                     & 21   & 21   & 21   & 21   \\
-7.6            & Elaboración del manual de   instalación y configuración                                       & 36   & 36   & 36   & 36   \\
-8              & \textbf{Fin de API}                                                                           & 0    & 0    & 0    & 0    \\
-\textbf{9}     & \textbf{Aplicaciones}                                                                         & 0    & 0    & 0    & 0    \\
-9.1            & Configuración del Entorno de   Desarrollo                                                     & 2    & 2    & 2    & 2    \\
-\textbf{9.2}   & \textbf{Usuarios.}                                                                            & 0    & 0    & 0    & 0    \\
-9.2.1          & Sesiones seguras.                                                                             & 24   & 24   & 24   & 24   \\
-9.2.2          & Gestión de Mi Perfil                                                                          & 12   & 12   & 12   & 12   \\
-\textbf{9.2.3} & \textbf{Gestión de Usuarios}                                                                  & 0    & 0    & 0    & 0    \\
-9.2.3.1        & Altas y bajas.                                                                                & 6    & 0    & 0    & 0    \\
-9.2.3.2        & Gestión de Roles                                                                              & 9    & 9    & 9    & 9    \\
-\textbf{9.3}   & \textbf{Administración de}                                                                    & 0    & 0    & 0    & 0    \\
-9.3.1          & MQTT: Suscripción y publicación   de tópicos.                                                 & 12   & 12   & 12   & 12   \\
-9.3.2          & Estados.                                                                                      & 6    & 6    & 6    & 6    \\
-9.3.3          & Permisos.                                                                                     & 6    & 6    & 6    & 6    \\
-9.3.4          & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & 6    & 6    & 6    & 6    \\
-9.3.5          & Zonas a monitorear.                                                                           & 6    & 6    & 6    & 6    \\
-9.3.6          & Sensores.                                                                                     & 6    & 6    & 6    & 6    \\
-9.3.7          & Severidades.                                                                                  & 6    & 6    & 6    & 6    \\
-9.3.8          & Alarmas y notificaciones.                                                                     & 6    & 6    & 6    & 6    \\
-9.3.9          & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & 6    & 6    & 6    & 6    \\
-\textbf{9.4}   & \textbf{Gestión de Datos.}                                                                    & 0    & 0    & 0    & 0    \\
-9.4.1          & Lectura de datos: por sensores y   zonas                                                      & 18   & 18   & 18   & 18   \\
-9.4.2          & visualización de reportes: por   rango de fechas,  y zonas.                                   & 18   & 18   & 18   & 18   \\
-9.5            & Pruebas de Funcionamiento                                                                     & 21   & 21   & 21   & 21   \\
-9.6            & Elaboración del manual de   instalación y configuración                                       & 36   & 36   & 36   & 36   \\
-10             & \textbf{Fin del Proyecto}                                                                     &      &      &      &  
+\cellcolor[HTML]{418ddc} 
+	& \cellcolor[HTML]{418ddc} 
+	& \multicolumn{5}{c}{\cellcolor[HTML]{418ddc}Recursos requeridos (horas)} \\ \cline{3-6} 
+\multirow{-2}{*}
+	{\cellcolor[HTML]{418ddc}
+	\begin{tabular}[c]{@{}c@{}}Código\\ WBS
+	\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{418ddc}
+	\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea
+	\end{tabular}} & Dev & PC & UI/UX & Mac  & Server \\ \hline
+1 & Inicio &  &  &  &  &  \\
+\textbf{2} & \textbf{Capacitaciones y   Entrenamientos} &  &  &  &  &  \\
+02.1 & Nodejs: Curso de Capacitación & 35 & 35 &  &  &  \\
+02.2 & Nodejs TDD: Testing Training & 5 & 5 &  &  &  \\
+02.3 & React TDD: Testing training & 12 & 12 &  &  &  \\
+02.4 & Entrenamiento en GraphQL & 14 & 14 &  &  &  \\
+02.5 & Entrenamiento en React Native & 20 & 20 &  &  &  \\
+\textbf{3} & \textbf{UX/UI: Diseño de prototipos   de interfaces de usuario} &  &  &  &  &  \\
+03.1 & Prototipo interfaz portal cautivo &  &  & 40 & 40 &  \\
+03.2 & Prototipo interfaz App web/mobile &  &  & 120 & 120 &  \\
+\textbf{4} & \textbf{Configuración del Ambiente de   Trabajo} &  &  &  &  &  \\
+04.1 & Instalación del OS, ajuste y seteo de   certificados seguros & 4 & 4 &  &  & 4 \\
+04.2 & Instalación de aplicaciones en el server   (Webmin, Docker, Mosquitto y NTP) y documentación & 5 & 5 &  &  & 5 \\
+04.3 & Broker MQTT: Configuración, pruebas y   documentación & 3,5 & 3,5 &  &  & 3,5 \\
+04.4 & Servicio NTP: Configuración, pruebas y   documentación & 1,5 & 1,5 &  &  & 1,5 \\
+\textbf{5} & \textbf{Base de Datos} & \textbf{} & \textbf{} &  &  & \textbf{} \\
+05.1 & Instalación de Postgres - MongoDB y puesta a   punto & 2 & 2 &  &  & 2 \\
+05.2 & Diseño y desarrollo del esquema de la BD & 16 & 16 &  &  & 16 \\
+05.3 & Elaboración del manual de instalación y   configuración & 4 & 4 &  &  & 0 \\
+\textbf{6} & \textbf{Sensores y Actuadores} &  &  &  &  & 0 \\
+\textbf{06.1} & \textbf{Desarrollo del software de control} &  &  &  &  & 0 \\
+06.1.1 & Gestión de memoria no volátil   y configuraciones & 6 & 6 &  &  & 6 \\
+06.1.2 & Sección MQTT & 12 & 12 &  &  & 12 \\
+06.1.3 & Sección NTP & 6 & 6 &  &  & 6 \\
+06.1.4 & Implementación de OTA & 12 & 12 &  &  & 12 \\
+\textbf{06.2} & \textbf{Desarrollo del portal cautivo} &  &  &  &  & 0 \\
+06.2.1 & Landing Page & 7,2 & 7,2 &  &  & 7,2 \\
+06.2.2 & Gestión de Usuario & 6 & 6 &  &  & 6 \\
+06.2.3 & Gestión de SSID Externa & 6 & 6 &  &  & 6 \\
+06.2.4 & Gestión de MQTT & 6 & 6 &  &  & 6 \\
+06.2.5 & Gestión de NTP & 6 & 6 &  &  & 6 \\
+06.2.6 & Gestión de SSID Interna & 6 & 6 &  &  & 6 \\
+06.2.7 & Reseteo y Reinicio & 6 & 6 &  &  & 6 \\
+06.2.8 & Informe de test de hardware & 6 & 6 &  &  & 6 \\
+06.3 & Pruebas de Funcionamiento & 16,8 & 16,8 &  &  & 16,8 \\
+06.4 & Elaboración del manual de instalación y   configuración & 32 & 32 &  &  &  \\
+7 & Fin de OS Dispositivos &  &  &  &  &  \\
+\textbf{8} & \textbf{Api Webservice} &  &  &  &  &  \\
+08.1 & Configuración del Entorno de Desarrollo & 2 & 2 &  &  & 2 \\
+\textbf{08.2} & \textbf{Usuarios} &  &  &  &  &  \\
+08.2.1 & Sesiones seguras & 14 & 14 &  &  & 14 \\
+08.2.2 & Gestión de Mi Perfil & 6 & 6 &  &  & 6 \\
+\textbf{08.2.3} & \textbf{Gestión de Usuarios} &  &  &  &  &  \\
+08.2.3.1 & Altas y bajas & 6 & 6 &  &  & 6 \\
+08.2.3.2 & Gestión de Roles & 9 & 9 &  &  & 9 \\
+\textbf{08.3} & \textbf{Administración de} &  &  &  &  &  \\
+08.3.1 & MQTT: Suscripción y   publicación de tópicos & 12 & 12 &  &  & 12 \\
+08.3.2 & Estados & 6 & 6 &  &  & 6 \\
+08.3.3 & Permisos & 6 & 6 &  &  & 6 \\
+08.3.4 & Gestión de Tags de Categorías   o Tipos de Clasificación & 6 & 6 &  &  & 6 \\
+08.3.5 & Zonas a monitorear & 6 & 6 &  &  & 6 \\
+08.3.6 & Sensores & 6 & 6 &  &  & 6 \\
+08.3.7 & Severidades & 6 & 6 &  &  & 6 \\
+08.3.8 & Alarmas y notificaciones & 6 & 6 &  &  & 6 \\
+08.3.9 & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT & 6 & 6 &  &  & 6 \\
+\textbf{08.4} & \textbf{Gestión de Datos} &  &  &  &  &  \\
+08.4.1 & Lectura de datos: por   sensores y zonas & 18 & 18 &  &  & 18 \\
+08.4.2 & visualización de reportes:   por rango de fechas, horas y zonas & 18 & 18 &  &  & 18 \\
+08.5 & Pruebas de Funcionamiento & 21 & 21 &  &  & 21 \\
+08.6 & Elaboración del manual de instalación y   configuración & 36 & 36 &  &  & 36 \\
+9 & Fin de API &  &  &  &  &  \\
+\textbf{10} & \textbf{Aplicaciones} &  &  &  &  &  \\
+10.1 & Configuración del Entorno de Desarrollo & 2 & 2 &  &  & 2 \\
+\textbf{10.2} & \textbf{Usuarios} & \textbf{} & \textbf{} &  &  & \textbf{} \\
+10.2.1 & Sesiones seguras & 24 & 24 &  &  & 24 \\
+10.2.2 & Gestión de Mi Perfil & 12 & 12 &  &  & 12 \\
+\textbf{10.2.3} & \textbf{Gestión de Usuarios} &  &  &  &  &  \\
+10.2.3.1 & Altas y bajas & 6 & 6 &  &  & 6 \\
+10.2.3.2 & Gestión de Roles & 9 & 9 &  &  & 9 \\
+\textbf{10.3} & \textbf{Administración de} &  &  &  &  &  \\
+10.3.1 & MQTT: Suscripción y   publicación de tópicos & 12 & 12 &  &  & 12 \\
+10.3.2 & Estados & 6 & 6 &  &  & 6 \\
+10.3.3 & Permisos & 6 & 6 &  &  & 6 \\
+10.3.4 & Gestión de Tags de Categorías   o Tipos de Clasificación & 6 & 6 &  &  & 6 \\
+10.3.5 & Zonas a monitorear & 6 & 6 &  &  & 6 \\
+10.3.6 & Sensores & 6 & 6 &  &  & 6 \\
+10.3.7 & Severidades & 6 & 6 &  &  & 6 \\
+10.3.8 & Alarmas y notificaciones & 6 & 6 &  &  & 6 \\
+10.3.9 & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT & 6 & 6 &  &  & 6 \\
+\textbf{10.4} & \textbf{Gestión de Datos} &  &  &  &  &  \\
+10.4.1 & Lectura de datos: por   sensores y zonas & 18 & 18 &  &  & 18 \\
+10.4.2 & visualización de reportes: por rango de fechas, horas y zonas & 18 & 18 &  &  & 18 \\
+10.5 & Pruebas de Funcionamiento & 21 & 21 &  &  & 21 \\
+10.6 & Elaboración del manual de instalación y configuración & 36 & 36 &  &  &  \\
+11 & \textbf{Fin del Proyecto} &  &  &  &  & \\ \hline
+  & Total & 652 & 652 & 160 & 160 & 494 \\ \hline
 
 \end{tabularx}
 \end{landscape}
@@ -1160,19 +816,20 @@ Armado a partir del WBS definido en la etapa anterior.
 \multicolumn{4}{|c|}{\cellcolor[HTML]{418ddc}COSTOS DIRECTOS} \\ \hline
 \rowcolor[HTML]{418ddc} 
 Descripción & \multicolumn{1}{c|}{\cellcolor[HTML]{418ddc}Cantidad} & \multicolumn{1}{c|}{\cellcolor[HTML]{418ddc}Valor unitario} & \multicolumn{1}{c|}{\cellcolor[HTML]{418ddc}Valor total} \\ \hline
-Developer & \multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{379,16/hora} & \multicolumn{1}{c|}{227.496,00} \\ \hline
-Internet &\multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{1,11/hora} & \multicolumn{1}{c|}{666,00} \\ \hline 
-PC &\multicolumn{1}{c|}{600 horas} & \multicolumn{1}{c|}{3,42/hora} & \multicolumn{1}{c|}{2.052,00} \\ \hline
-Servidor &\multicolumn{1}{c|}{566 horas} & \multicolumn{1}{c|}{0,77/hora} & \multicolumn{1}{c|}{435,82} \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{230.649,82} \\ \hline
+Developer & \multicolumn{1}{c|}{652 horas} & \multicolumn{1}{c|}{379,16/hora} & \multicolumn{1}{c|}{247.212,32} \\ \hline
+PC &\multicolumn{1}{c|}{652 horas} & \multicolumn{1}{c|}{3,42/hora} & \multicolumn{1}{c|}{2.229,84} \\ \hline
+UX/UI &\multicolumn{1}{c|}{160 horas} & \multicolumn{1}{c|}{200/hora} & \multicolumn{1}{c|}{32.000,00} \\ \hline 
+Mac &\multicolumn{1}{c|}{160 horas} & \multicolumn{1}{c|}{6.88/hora} & \multicolumn{1}{c|}{1.100,80} \\ \hline 
+Servidor &\multicolumn{1}{c|}{494 horas} & \multicolumn{1}{c|}{0,77/hora} & \multicolumn{1}{c|}{435,82} \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{282.978,78} \\ \hline
 \rowcolor[HTML]{418ddc} 
 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{418ddc}COSTOS INDIRECTOS} \\ \hline
-\multicolumn{3}{|c|}{30\% de los costos directos.} & \multicolumn{1}{c|}{69.194,95} \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{69.194,95} \\ \hline
+\multicolumn{3}{|c|}{40\% de los costos directos.} & \multicolumn{1}{c|}{113.191,51} \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{113.191,51} \\ \hline
 
 \rowcolor[HTML]{aad80e}
-\multicolumn{3}{|c|}{TOTAL} & 299.844,77
+\multicolumn{3}{|c|}{TOTAL} & 396.170,29
    \\ \hline
 \end{tabularx}
 
@@ -1195,86 +852,92 @@ Servidor &\multicolumn{1}{c|}{566 horas} & \multicolumn{1}{c|}{0,77/hora} & \mul
 \rowcolor[HTML]{418ddc} \cellcolor[HTML]{418ddc} & \cellcolor[HTML]{418ddc} & \multicolumn{4}{c|}{\cellcolor[HTML]{418ddc}Listar todos los nombres y roles del proyecto} \\ \cline{3-6} 
 \rowcolor[HTML]{418ddc} \cellcolor[HTML]{418ddc} & \cellcolor[HTML]{418ddc} &  Responsable & Orientador & Equipo & Cliente \\ \cline{3-6} 
 \rowcolor[HTML]{418ddc} \multirow{-3}{*}{\cellcolor[HTML]{418ddc}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
-\multirow{-3}{*}{\cellcolor[HTML]{418ddc}Nombre de la tarea} & \authorname & \supname &  --- & \clientename \\ \hline
-1 & \textbf{Inicio}                                                                               				       & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} \\
-2                      & \textbf{Capacitaciones y Entrenamientos}                                                      & \textbf{P} & \textbf{I} & \textbf{-} & \textbf{I} \\
-2.1                    & Entrenamiento en GraphQL                                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-2.2                    & Entrenamiento en React Native                                                                 & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-3                      & \textbf{Configuración del Ambiente de   Trabajo}                                              & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{I} \\
-3.1                    & Instalación del OS, ajuste y   seteo de certificados seguros                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-3.2                    & Instalación de aplicaciones en   el server (Webmin, Docker, Mosquitto y NTP) y documentación. & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-3.3                    & Broker MQTT: Configuración,   pruebas y documentación.                                        & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-3.4                    & Servicio NTP: Configuración,   pruebas y documentación.                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-4                      & \textbf{Base de Datos}                                                                        & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-4.1                    & Instalación de Postgres -   MongoDB y puesta a punto                                          & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-4.2                    & Diseño y desarrollo del esquema   de la BD                                                    & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-4.3                    & Elaboración del manual de   instalación y configuración                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5                      & \textbf{Sensores y Actuadores}                                                                & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-5.1                    & \textbf{Desarrollo del software de   control}                                                 & P          & C          & -          & I          \\
-5.1.1                  & Gestión de memoria no volátil y   configuraciones                                             & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.1.2                  & Sección MQTT                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.1.3                  & Sección NTP                                                                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.1.4                  & Implementación de OTA                                                                         & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2                    & \textbf{Desarrollo del portal cautivo}                                                        & P          & C          & -          & I          \\
-5.2.1                  & Landing Page                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2.2                  & Gestión de Usuario                                                                            & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2.3                  & Gestión de SSID Externa                                                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2.4                  & Gestión de MQTT                                                                               & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2.5                  & Gestión de NTP                                                                                & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2.6                  & Gestión de SSID Interna                                                                       & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2.7                  & Reseteo y Reinicio                                                                            & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.2.8                  & Informe de test de hardware                                                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-5.3                    & Pruebas de Funcionamiento                                                                     & P          & C          & -          & I          \\
-5.4                    & Elaboración del manual de   instalación y configuración                                       & P          & C          & -          & C          \\
-6                      & \textbf{Fin de OS Dispositivos}                                                               & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-} \\
-7                      & \textbf{Api Webservice}                                                                       & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-7.1                    & Configuración del Entorno de   Desarrollo                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.2                    & \textbf{Usuarios.}                                                                            & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-7.2.1                  & Sesiones seguras.                                                                             & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.2.2                  & Gestión de Mi Perfil                                                                          & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.2.3                  & \textbf{Gestión de Usuarios}                                                                  & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-7.2.3.1                & Altas y bajas.                                                                                & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.2.3.2                & Gestión de Roles                                                                              & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3                    & \textbf{Administración de}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-7.3.1                  & MQTT: Suscripción y publicación   de tópicos.                                                 & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.2                  & Estados.                                                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.3                  & Permisos.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.4                  & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.5                  & Zonas a monitorear.                                                                           & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.6                  & Sensores.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.7                  & Severidades.                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.8                  & Alarmas y notificaciones.                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.3.9                  & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.4                    & \textbf{Gestión de Datos.}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-7.4.1                  & Lectura de datos: por sensores y   zonas                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.4.2                  & visualización de reportes: por   rango de fechas,  y zonas.                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-7.5                    & Pruebas de Funcionamiento                                                                     & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{-} \\
-7.6                    & Elaboración del manual de   instalación y configuración                                       & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-8                      & \textbf{Fin de API}                                                                           &            & \textbf{-} & \textbf{-} & \textbf{-} \\
-9                      & \textbf{Aplicaciones}                                                                         & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-9.1                    & Configuración del Entorno de   Desarrollo                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.2                    & \textbf{Usuarios.}                                                                            & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-9.2.1                  & Sesiones seguras.                                                                             & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.2.2                  & Gestión de Mi Perfil                                                                          & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.2.3                  & \textbf{Gestión de Usuarios}                                                                  & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-9.2.3.1                & Altas y bajas.                                                                                & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.2.3.2                & Gestión de Roles                                                                              & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3                    & \textbf{Administración de}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-9.3.1                  & MQTT: Suscripción y publicación   de tópicos.                                                 & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.2                  & Estados.                                                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.3                  & Permisos.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.4                  & Gestión de Tags de Categorias o   Tipos de Clasificación.                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.5                  & Zonas a monitorear.                                                                           & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.6                  & Sensores.                                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.7                  & Severidades.                                                                                  & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.8                  & Alarmas y notificaciones.                                                                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.3.9                  & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT.                     & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.4                    & \textbf{Gestión de Datos.}                                                                    & \textbf{P} & \textbf{A} & \textbf{-} & \textbf{I} \\
-9.4.1                  & Lectura de datos: por sensores y   zonas                                                      & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.4.2                  & visualización de reportes: por   rango de fechas,  y zonas.                                   & P          & \textbf{-} & \textbf{-} & \textbf{-} \\
-9.5                    & Pruebas de Funcionamiento                                                                     & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{-} \\
-9.6                    & Elaboración del manual de   instalación y configuración                                       & \textbf{P} & \textbf{C} & \textbf{-} & \textbf{C} \\
-10                     & \textbf{Fin del Proyecto}                                                                     & \textbf{-} & \textbf{-} & \textbf{-} & \textbf{-}
+\multirow{-3}{*}{\cellcolor[HTML]{418ddc}Nombre de la tarea} & \authorname & \supname &  Gisvel González & \clientename \\ \hline
+1 & Inicio &  &  &  &  \\
+\textbf{2} & \textbf{Capacitaciones y   Entrenamientos} & P & I &  & I \\
+02.1 & Nodejs: Curso de Capacitación & P &  &  &  \\
+02.2 & Nodejs TDD: Testing Training & P &  &  &  \\
+02.3 & React TDD: Testing training & P &  &  &  \\
+02.4 & Entrenamiento en GraphQL & P &  &  &  \\
+02.5 & Entrenamiento en React Native & P &  &  &  \\
+\textbf{3} & \textbf{UX/UI: Diseño de prototipos   de interfaces de usuario} & S & A & P & I \\
+03.1 & Prototipo interfaz portal cautivo &  &  & P &  \\
+03.2 & Prototipo interfaz App web/mobile &  &  & P &  \\
+\textbf{4} & \textbf{Configuración del Ambiente de   Trabajo} & P & C &  & I \\
+04.1 & Instalación del OS, ajuste y seteo de   certificados seguros & P &  &  &  \\
+04.2 & Instalación de aplicaciones en el server   (Webmin, Docker, Mosquitto y NTP) y documentación & P &  &  &  \\
+04.3 & Broker MQTT: Configuración, pruebas y   documentación & P &  &  &  \\
+04.4 & Servicio NTP: Configuración, pruebas y   documentación & P &  &  &  \\
+\textbf{5} & \textbf{Base de Datos} & P & A &  & I \\
+05.1 & Instalación de Postgres - MongoDB y puesta a   punto & P &  &  &  \\
+05.2 & Diseño y desarrollo del esquema de la BD & P &  &  &  \\
+05.3 & Elaboración del manual de instalación y   configuración & P &  &  &  \\
+\textbf{6} & \textbf{Sensores y Actuadores} & P & A &  & I \\
+\textbf{06.1} & \textbf{Desarrollo del software de control} & P & I &  &  \\
+06.1.1 & Gestión de memoria no volátil   y configuraciones & P &  &  &  \\
+06.1.2 & Sección MQTT & P &  &  &  \\
+06.1.3 & Sección NTP & P &  &  &  \\
+06.1.4 & Implementación de OTA & P &  &  &  \\
+\textbf{06.2} & \textbf{Desarrollo del portal cautivo} & P & C &  & I \\
+06.2.1 & Landing Page & P &  &  &  \\
+06.2.2 & Gestión de Usuario & P &  &  &  \\
+06.2.3 & Gestión de SSID Externa & P &  &  &  \\
+06.2.4 & Gestión de MQTT & P &  &  &  \\
+06.2.5 & Gestión de NTP & P &  &  &  \\
+06.2.6 & Gestión de SSID Interna & P &  &  &  \\
+06.2.7 & Reseteo y Reinicio & P &  &  &  \\
+06.2.8 & Informe de test de hardware & P &  &  &  \\
+06.3 & Pruebas de Funcionamiento & P & I &  & I \\
+06.4 & Elaboración del manual de instalación y   configuración & P & I &  & I \\
+7 & Fin de OS Dispositivos & P &  &  &  \\
+\textbf{8} & \textbf{Api Webservice} & P & A &  & I \\
+08.1 & Configuración del Entorno de Desarrollo & P &  &  &  \\
+\textbf{08.2} & \textbf{Usuarios} & P & A &  & I \\
+08.2.1 & Sesiones seguras & P &  &  &  \\
+08.2.2 & Gestión de Mi Perfil & P &  &  &  \\
+\textbf{08.2.3} & \textbf{Gestión de Usuarios} & P & I &  & I \\
+08.2.3.1 & Altas y bajas & P &  &  &  \\
+08.2.3.2 & Gestión de Roles & P &  &  &  \\
+\textbf{08.3} & \textbf{Administración de} & P & I &  & I \\
+08.3.1 & MQTT: Suscripción y   publicación de tópicos & P &  &  &  \\
+08.3.2 & Estados & P &  &  &  \\
+08.3.3 & Permisos & P &  &  &  \\
+08.3.4 & Gestión de Tags de Categorías   o Tipos de Clasificación & P &  &  &  \\
+08.3.5 & Zonas a monitorear & P &  &  &  \\
+08.3.6 & Sensores & P &  &  &  \\
+08.3.7 & Severidades & P &  &  &  \\
+08.3.8 & Alarmas y notificaciones & P &  &  &  \\
+08.3.9 & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT & P &  &  &  \\
+\textbf{08.4} & \textbf{Gestión de Datos} & P & I &  & I \\
+08.4.1 & Lectura de datos: por   sensores y zonas & P &  &  &  \\
+08.4.2 & visualización de reportes:   por rango de fechas, horas y zonas & P &  &  &  \\
+08.5 & Pruebas de Funcionamiento & P &  &  &  \\
+08.6 & Elaboración del manual de instalación y   configuración & P &  &  &  \\
+9 & Fin de API & P &  &  &  \\
+\textbf{10} & \textbf{Aplicaciones} & P & A &  & I \\
+10.1 & Configuración del Entorno de Desarrollo & P &  &  &  \\
+\textbf{10.2} & \textbf{Usuarios} & P & I &  & I \\
+10.2.1 & Sesiones seguras & P &  &  &  \\
+10.2.2 & Gestión de Mi Perfil & P &  &  &  \\
+\textbf{10.2.3} & \textbf{Gestión de Usuarios} & P & I &  & I \\
+10.2.3.1 & Altas y bajas & P &  &  &  \\
+10.2.3.2 & Gestión de Roles & P &  &  &  \\
+\textbf{10.3} & \textbf{Administración de} & P & I &  & I \\
+10.3.1 & MQTT: Suscripción y   publicación de tópicos & P &  &  &  \\
+10.3.2 & Estados & P &  &  &  \\
+10.3.3 & Permisos & P &  &  &  \\
+10.3.4 & Gestión de Tags de Categorías   o Tipos de Clasificación & P &  &  &  \\
+10.3.5 & Zonas a monitorear & P &  &  &  \\
+10.3.6 & Sensores & P &  &  &  \\
+10.3.7 & Severidades & P &  &  &  \\
+10.3.8 & Alarmas y notificaciones & P &  &  &  \\
+10.3.9 & Configuraciones varias del   entorno: servidor sendmail, telegram, IFTTT & P &  &  &  \\
+\textbf{10.4} & \textbf{Gestión de Datos} & P & I &  & I \\
+10.4.1 & Lectura de datos: por   sensores y zonas & P &  &  &  \\
+10.4.2 & visualización de reportes:   por rango de fechas, horas y zonas & P &  &  &  \\
+10.5 & Pruebas de Funcionamiento & P & I &  & I \\
+10.6 & Elaboración del manual de instalación y   configuración & P & I &  & C \\
+11 & \textbf{Fin del Proyecto} & P & A &  & A
 \end{tabularx}
 
 {\footnotesize
@@ -1306,31 +969,31 @@ a) Identificación de los riesgos:
 Riesgo 1: Falta de tiempo para adquirir los conocimientos necesarios para desarrollar y culminar todo el proyecto.
 \begin{itemize}
 \item Severidad (S): 7, Puede impactar en la calidad del software y por ende en el desarrollo de los requerimientos.
-\item Ocurrencia (O): 2, Por experiencia previa se sabe que dicho riesgo se mitiga con capacitaciones y entrenamientos.
+\item Ocurrencia (O): 2, Es baja porque que se cuenta con un plan de capacitaciones que facilitará la adquisición del conocimiento necesario dentro del tiempo estipulado sin generar contratiempos.
 \end{itemize}
 		
-Riesgo 2: Mala estimación de la planificación. Incumplimiento de fecha pautada.
+Riesgo 2: Mala estimación de la planificación y por ende incumplimiento de fecha pautada.
 \begin{itemize}
-\item Severidad (S): 9, Riesgo alto dado que se requiere la culminación de todo el proyecto.
-\item Ocurrencia (O): 4, Se cuenta con una experiencia en planificación de sólo 1 año.
+\item Severidad (S): 9, Riesgo alto porque se requiere la culminación de todo el proyecto en tiempo y forma.
+\item Ocurrencia (O): 4, Se cuenta con una experiencia en planificación de tan solo 1 año.
 \end{itemize}
 		
-Riesgo 3: La estación de trabajo del desarrollador del proyecto sufre daños irreversibles.  
+Riesgo 3: La estación de trabajo de desarrollo sufra daños irreversibles.
 \begin{itemize}
-\item Severidad (S): 10, El desarrollador cuenta con un equipo personal a dedicación exclusiva para el proyecto.
+\item Severidad (S): 10, Se cuenta con un solo equipo a dedicación exclusiva para el desarrollo.
 \item Ocurrencia (O): 2, Es baja dado que el equipo es relativamente nuevo y cuenta con mantenimientos periódicos.
 \end{itemize}
 
 Riesgo 4: Que lleguen a existir requerimientos no contemplados en el levantamiento inicial.  
 \begin{itemize}
-\item Severidad (S): 6, A medida que el proyecto se vaya desarrollando es posible que aparezcan requerimientos importantes no contemplados inicialmente ya sea por casos detectados por desarrollo o el cliente.
+\item Severidad (S): A medida que el proyecto se vaya desarrollando es posible que aparezcan requerimientos importantes no contemplados inicialmente.
 \item Ocurrencia (O): 3, Es posible que hayan quedado algunos requerimientos funcionales sin levantar de los cuales su desarrollo queda supeditado a la relevancia.
 \end{itemize}		
 
-Riesgo 5: Pérdida o daño de los archivos fuentes de los componentes del proyecto. 
+Riesgo 5: Perdida o daño de los archivos fuentes de los componentes del proyecto. 
 \begin{itemize}
 \item Severidad (S): 9, Implica perdida de trabajo y retraso en el desarrollo con la consecuente prolongación de la fecha de finalización.
-\item Ocurrencia (O): 1, Durante el desarrollo del proyecto se utilizará un sistema de control de versiones, backup en NAS local y en Cloud.
+\item Ocurrencia (O): 1, Durante el desarrollo del proyecto se utilizara un sistema de control de versiones, backup en NAS local y en Cloud.
 \end{itemize}	
 							
 \newpage		
@@ -1344,7 +1007,7 @@ b) Tabla de gestión de riesgos:
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 Riesgo 1 & 7  & 2 & 14 &   &   &    \\
 Riesgo 2 & 9  & 4 & 36 & 5 & 2 & 10 \\
-Riesgo 3 & 10 & 2 & 20 & 3 & 1 &    \\
+Riesgo 3 & 10 & 2 & 20 & 3 & 1 & 3  \\
 Riesgo 4 & 6  & 3 & 18 &   &   &    \\
 Riesgo 5 & 9  & 1 & 9  &   &   &
 \end{tabularx}
@@ -1359,7 +1022,7 @@ Riesgo 2: Mala estimación de la planificación. Incumplimiento de fecha pautada
 \begin{itemize}
 \item Plan de mitigación: Contar con la asesoría de expertos en el tema para hacer una mejor estimación.
 \item Severidad (S): 5, Se cuenta con el apoyo de un Scrum Master para verificar las estimaciones.
-\item Ocurrencia (O): 2, Es un colega del trabajo que está disponible a requerimiento del desarrollador previa agenda.
+\item Ocurrencia (O): 2, La ocurrencia de este riesgo bajará dado a que se pedirá ayuda periódica a un experto en relación a la revisión de la planificación.
 \end{itemize}
 
 Riesgo 3: La estación de trabajo del desarrollador del proyecto sufre daños irreversibles.  
@@ -1512,17 +1175,15 @@ b) Como los componentes a utilizar pueden ser adquiridos con varios proveedores 
 \multicolumn{6}{|c|}{\cellcolor[HTML]{418ddc}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
 \rowcolor[HTML]{418ddc} 
 Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
-1             & Fecha   de inicio                                                                                            & Única vez al comienzo            & \authorname & \clientename,   \supname & Email \\
-2, 3, 4       & Capacitaciones y configuraciones.                                                                            & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-5.1           & \%   de avance en el desarrollo del software de control del sensor.                                           & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-5.2, 5.3, 5.4 & \% de avance en el Desarrollo del portal cautivo del   sensor, resultado de pruebas y documentación generada. & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-7.2           & \% de avance en la Api Usuarios.                                                                              & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-7.3           & \% de avance en la Api Administración                                                                         & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-7.4, 7.5, 7.6 & \% de avance en la Api Gestión de Datos, resultado de   pruebas y documentación generada.                     & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-9.2           & \% de avance en la App sección de Usuarios.                                                                   & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-9.3           & \% de avance en la App sección de Administración                                                               & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-9.4, 9.5, 9.6 & \% de avance en la App sección de Gestión de Datos,   resultado de las pruebas y documentación generada.      & Mensual   mientras dure la tarea & \authorname & \clientename,   \supname & Email \\
-9.6           & Fin del Proyecto                                                                                             & Única vez al final               & \authorname & \clientename,   \supname & Email
+\textbf{1} & Fecha de Inicio & Única vez al comienzo & K. Aguirre & W. Mercado, G. Algaze & Email \\
+2 & \% de avance en las   Capacitaciones y Entrenamientos & Mensual mientras dure la tarea & K. Aguirre & W. Mercado, G. Algaze & Email \\
+3 & \% de avance en  el Diseño de prototipos de interfaces de   usuario de UX/UI & Mensual mientras dure la tarea & K. Aguirre & W. Mercado, G. Algaze & Email \\
+4 & Culminación de tareas de   Configuración del Ambiente de Trabajo & AL finalizar la tarea & K. Aguirre & W. Mercado, G. Algaze & Email \\
+5 & Culminación de tareas de   Configuración de Base de Datos & AL finalizar la tarea & K. Aguirre & W. Mercado, G. Algaze & Email \\
+6 & \% de avance en el desarrollo   del sistema de los Sensores y Actuadores & Mensual mientras dure la tarea & K. Aguirre & W. Mercado, G. Algaze & Email \\
+8 & \% de avance en el desarrollo   de la Api Webservice & Mensual mientras dure la tarea & K. Aguirre & W. Mercado, G. Algaze & Email \\
+10 & \% de avance en el desarrollo   de las Aplicaciones & Mensual mientras dure la tarea & K. Aguirre & W. Mercado, G. Algaze & Email \\
+11 & Fin del Proyecto & Única vez al final & K. Aguirre & W. Mercado, G. Algaze & Email
 \end{tabularx}%
 %}
 %\end{table}
